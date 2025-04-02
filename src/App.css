@@ -632,10 +632,13 @@ body {
 }
 
 .inventory-grid {
-	display: grid;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	flex-wrap: wrap;
 	gap: 1.5rem;
-	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-	justify-items: center;
+	justify-items: start;
 	padding: 1rem;
 	width: 100%;
 	box-sizing: border-box;
@@ -656,7 +659,6 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #f3f4f6;
 	border-radius: 0.5rem;
 	padding: 0.5rem;
 	margin-bottom: 0.5rem;
