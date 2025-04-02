@@ -10,6 +10,7 @@ import BodyTypeResult from './components/BodyTypeResult'
 import CategoryPage from './components/CategoryPage'
 import OutfitIntro from './components/OutfitIntro'
 import Outfits from './components/Outfits'
+import Inventory from './components/Inventory'
 
 function Home() {
 	const navigate = useNavigate()
@@ -76,6 +77,7 @@ function App() {
 				/>
 				<Route path='/outfit-intro' element={<OutfitIntro />} />
 				<Route path='/outfits' element={<Outfits />} />
+				<Route path='/inventory' element={<Inventory />} />
 			</Routes>
 		</Router>
 	)
