@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // Import images for each category
 import top1 from '../assets/images/tops/top1.png'
@@ -21,10 +22,12 @@ import bottom8 from '../assets/images/bottoms/bottom8.png'
 import dress1 from '../assets/images/dresses/dress1.png'
 import dress2 from '../assets/images/dresses/dress2.png'
 import dress3 from '../assets/images/dresses/dress3.png'
+import dress4 from '../assets/images/dresses/dress4.png'
 
 import layer1 from '../assets/images/layers/layer1.png'
 import layer2 from '../assets/images/layers/layer2.png'
 import layer3 from '../assets/images/layers/layer3.png'
+import layer4 from '../assets/images/layers/layer4.png'
 
 import bag1 from '../assets/images/bags/bag1.png'
 import bag2 from '../assets/images/bags/bag2.png'
@@ -39,6 +42,7 @@ import footwear5 from '../assets/images/footwear/footwear5.png'
 function Inventory() {
 	const [selectedCategory, setSelectedCategory] = useState('Tops')
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+	const navigate = useNavigate()
 
 	const categories = [
 		'Tops',
@@ -77,12 +81,14 @@ function Inventory() {
 					{ id: 1, name: 'Dress 1', image: dress1 },
 					{ id: 2, name: 'Dress 2', image: dress2 },
 					{ id: 3, name: 'Dress 3', image: dress3 },
+					{ id: 4, name: 'Dress 4', image: dress4 },
 				]
 			case 'Layers':
 				return [
 					{ id: 1, name: 'Layer 1', image: layer1 },
 					{ id: 2, name: 'Layer 2', image: layer2 },
 					{ id: 3, name: 'Layer 3', image: layer3 },
+					{ id: 4, name: 'Layer 4', image: layer4 },
 				]
 			case 'Bags':
 				return [
@@ -190,6 +196,12 @@ function Inventory() {
 					</div>
 				</div>
 			</div>
+			<button
+				className='generate-outfits-button'
+				onClick={() => navigate('/generate-outfits')}
+			>
+				Generate Outfits
+			</button>
 		</div>
 	)
 }

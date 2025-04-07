@@ -11,6 +11,7 @@ import CategoryPage from './components/CategoryPage'
 import OutfitIntro from './components/OutfitIntro'
 import Outfits from './components/Outfits'
 import Inventory from './components/Inventory'
+import GenerateOutfits from './components/GenerateOutfits'
 
 function Home() {
 	const navigate = useNavigate()
@@ -78,6 +79,7 @@ function App() {
 				<Route path='/outfit-intro' element={<OutfitIntro />} />
 				<Route path='/outfits' element={<Outfits />} />
 				<Route path='/inventory' element={<Inventory />} />
+				<Route path='/generate-outfits' element={<GenerateOutfits />} />
 			</Routes>
 		</Router>
 	)
