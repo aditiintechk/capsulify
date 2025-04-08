@@ -2,42 +2,42 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // Import images for each category
-import top1 from '../assets/images/tops/top1.png'
-import top2 from '../assets/images/tops/top2.png'
-import top3 from '../assets/images/tops/top3.png'
-import top4 from '../assets/images/tops/top4.png'
-import top5 from '../assets/images/tops/top5.png'
-import top6 from '../assets/images/tops/top6.png'
-import top7 from '../assets/images/tops/top7.png'
+import blackLongSleevedTop from '../assets/images/tops/black-long-sleeved-top.png'
+import blackSatinTankTop from '../assets/images/tops/black-satin-tank-top.png'
+import blueAccentColoredBlouse from '../assets/images/tops/blue-accent-colored-blouse.png'
+import longSleevedAccentColoredTop from '../assets/images/tops/long-sleeved-accent-colored-top.png'
+import sleevelessBlouse from '../assets/images/tops/sleeveless-blouse.png'
+import whiteLongSleevedTop from '../assets/images/tops/white-long-sleeved-top.png'
+import whiteSatinTankTop from '../assets/images/tops/white-satin-tank-top.png'
 
-import bottom1 from '../assets/images/bottoms/bottom1.png'
-import bottom2 from '../assets/images/bottoms/bottom2.png'
-import bottom3 from '../assets/images/bottoms/bottom3.png'
-import bottom4 from '../assets/images/bottoms/bottom4.png'
-import bottom5 from '../assets/images/bottoms/bottom5.png'
-import bottom6 from '../assets/images/bottoms/bottom6.png'
-import bottom7 from '../assets/images/bottoms/bottom7.png'
-import bottom8 from '../assets/images/bottoms/bottom8.png'
+import beigeCasualShorts from '../assets/images/bottoms/beige-casual-shorts.png'
+import beigeTailoredPants from '../assets/images/bottoms/beige-tailored-pants.png'
+import blackTailoredPants from '../assets/images/bottoms/black-tailored-pants.png'
+import casualSkirt from '../assets/images/bottoms/casual-skirt.png'
+import denimPants from '../assets/images/bottoms/denim-pants.png'
+import formalBlackSkirt from '../assets/images/bottoms/formal-black-skirt.png'
+import formalPeplumBlackSkirt from '../assets/images/bottoms/formal-peplum-black-skirt.png'
+import taupeCasualPants from '../assets/images/bottoms/taupe-casual-pants.png'
 
-import dress1 from '../assets/images/dresses/dress1.png'
-import dress2 from '../assets/images/dresses/dress2.png'
-import dress3 from '../assets/images/dresses/dress3.png'
-import dress4 from '../assets/images/dresses/dress4.png'
+import blackBodyconDress from '../assets/images/dresses/black-bodycon-dress.png'
+import casualDress from '../assets/images/dresses/casual-dress.png'
+import littleBlackDress from '../assets/images/dresses/little-black-dress.png'
+import pinkDress from '../assets/images/dresses/pink-dress.png'
 
-import layer1 from '../assets/images/layers/layer1.png'
-import layer2 from '../assets/images/layers/layer2.png'
-import layer3 from '../assets/images/layers/layer3.png'
-import layer4 from '../assets/images/layers/layer4.png'
+import beigeBlazer from '../assets/images/layers/beige-blazer.png'
+import blackBlazer from '../assets/images/layers/black-blazer.png'
+import blackCardigan from '../assets/images/layers/black-cardigan.png'
+import casualJacket from '../assets/images/layers/casual-jacket.png'
 
-import bag1 from '../assets/images/bags/bag1.png'
-import bag2 from '../assets/images/bags/bag2.png'
-import bag3 from '../assets/images/bags/bag3.png'
+import blackClutch from '../assets/images/bags/black-clutch.png'
+import blackTote from '../assets/images/bags/black-tote.png'
+import brownTote from '../assets/images/bags/brown-tote.png'
 
-import footwear1 from '../assets/images/footwear/footwear1.png'
-import footwear2 from '../assets/images/footwear/footwear2.png'
-import footwear3 from '../assets/images/footwear/footwear3.png'
-import footwear4 from '../assets/images/footwear/footwear4.png'
-import footwear5 from '../assets/images/footwear/footwear5.png'
+import blackBalletFlats from '../assets/images/footwear/black-ballet-flats.png'
+import blackPumps from '../assets/images/footwear/black-pumps.png'
+import blackStrappyHeels from '../assets/images/footwear/black-strappy-heels.png'
+import goldStrappySandals from '../assets/images/footwear/gold-strappy-sandals.png'
+import nudeWedges from '../assets/images/footwear/nude-wedges.png'
 
 function Inventory() {
 	const [selectedCategory, setSelectedCategory] = useState('Tops')
@@ -57,52 +57,124 @@ function Inventory() {
 		switch (category) {
 			case 'Tops':
 				return [
-					{ id: 1, name: 'Top 1', image: top1 },
-					{ id: 2, name: 'Top 2', image: top2 },
-					{ id: 3, name: 'Top 3', image: top3 },
-					{ id: 4, name: 'Top 4', image: top4 },
-					{ id: 5, name: 'Top 5', image: top5 },
-					{ id: 6, name: 'Top 6', image: top6 },
-					{ id: 7, name: 'Top 7', image: top7 },
+					{
+						id: 1,
+						name: 'Black Long Sleeved Top',
+						image: blackLongSleevedTop,
+					},
+					{
+						id: 2,
+						name: 'Black Satin Tank Top',
+						image: blackSatinTankTop,
+					},
+					{
+						id: 3,
+						name: 'Blue Accent Colored Blouse',
+						image: blueAccentColoredBlouse,
+					},
+					{
+						id: 4,
+						name: 'Long Sleeved Accent Colored Top',
+						image: longSleevedAccentColoredTop,
+					},
+					{
+						id: 5,
+						name: 'Sleeveless Blouse',
+						image: sleevelessBlouse,
+					},
+					{
+						id: 6,
+						name: 'White Long Sleeved Top',
+						image: whiteLongSleevedTop,
+					},
+					{
+						id: 7,
+						name: 'White Satin Tank Top',
+						image: whiteSatinTankTop,
+					},
 				]
 			case 'Bottoms':
 				return [
-					{ id: 1, name: 'Bottom 1', image: bottom1 },
-					{ id: 2, name: 'Bottom 2', image: bottom2 },
-					{ id: 3, name: 'Bottom 3', image: bottom3 },
-					{ id: 4, name: 'Bottom 4', image: bottom4 },
-					{ id: 5, name: 'Bottom 5', image: bottom5 },
-					{ id: 6, name: 'Bottom 6', image: bottom6 },
-					{ id: 7, name: 'Bottom 7', image: bottom7 },
-					{ id: 8, name: 'Bottom 8', image: bottom8 },
+					{
+						id: 1,
+						name: 'Beige Casual Shorts',
+						image: beigeCasualShorts,
+					},
+					{
+						id: 2,
+						name: 'Beige Tailored Pants',
+						image: beigeTailoredPants,
+					},
+					{
+						id: 3,
+						name: 'Black Tailored Pants',
+						image: blackTailoredPants,
+					},
+					{ id: 4, name: 'Casual Skirt', image: casualSkirt },
+					{ id: 5, name: 'Denim Pants', image: denimPants },
+					{
+						id: 6,
+						name: 'Formal Black Skirt',
+						image: formalBlackSkirt,
+					},
+					{
+						id: 7,
+						name: 'Formal Peplum Black Skirt',
+						image: formalPeplumBlackSkirt,
+					},
+					{
+						id: 8,
+						name: 'Taupe Casual Pants',
+						image: taupeCasualPants,
+					},
 				]
 			case 'Dresses':
 				return [
-					{ id: 1, name: 'Dress 1', image: dress1 },
-					{ id: 2, name: 'Dress 2', image: dress2 },
-					{ id: 3, name: 'Dress 3', image: dress3 },
-					{ id: 4, name: 'Dress 4', image: dress4 },
+					{
+						id: 1,
+						name: 'Black Bodycon Dress',
+						image: blackBodyconDress,
+					},
+					{ id: 2, name: 'Casual Dress', image: casualDress },
+					{
+						id: 3,
+						name: 'Little Black Dress',
+						image: littleBlackDress,
+					},
+					{ id: 4, name: 'Pink Dress', image: pinkDress },
 				]
 			case 'Layers':
 				return [
-					{ id: 1, name: 'Layer 1', image: layer1 },
-					{ id: 2, name: 'Layer 2', image: layer2 },
-					{ id: 3, name: 'Layer 3', image: layer3 },
-					{ id: 4, name: 'Layer 4', image: layer4 },
+					{ id: 1, name: 'Beige Blazer', image: beigeBlazer },
+					{ id: 2, name: 'Black Blazer', image: blackBlazer },
+					{ id: 3, name: 'Black Cardigan', image: blackCardigan },
+					{ id: 4, name: 'Casual Jacket', image: casualJacket },
 				]
 			case 'Bags':
 				return [
-					{ id: 1, name: 'Bag 1', image: bag1 },
-					{ id: 2, name: 'Bag 2', image: bag2 },
-					{ id: 3, name: 'Bag 3', image: bag3 },
+					{ id: 1, name: 'Black Clutch', image: blackClutch },
+					{ id: 2, name: 'Black Tote', image: blackTote },
+					{ id: 3, name: 'Brown Tote', image: brownTote },
 				]
 			case 'Footwear':
 				return [
-					{ id: 1, name: 'Footwear 1', image: footwear1 },
-					{ id: 2, name: 'Footwear 2', image: footwear2 },
-					{ id: 3, name: 'Footwear 3', image: footwear3 },
-					{ id: 4, name: 'Footwear 4', image: footwear4 },
-					{ id: 5, name: 'Footwear 5', image: footwear5 },
+					{
+						id: 1,
+						name: 'Black Ballet Flats',
+						image: blackBalletFlats,
+					},
+					{ id: 2, name: 'Black Pumps', image: blackPumps },
+					{
+						id: 3,
+						name: 'Black Strappy Heels',
+						image: blackStrappyHeels,
+					},
+					{
+						id: 4,
+						name: 'Gold Strappy Sandals',
+						image: goldStrappySandals,
+					},
+					{ id: 5, name: 'Nude Wedges', image: nudeWedges },
 				]
 			default:
 				return []

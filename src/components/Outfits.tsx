@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
-import top2 from '../assets/images/tops/top2.png'
-import bottom9 from '../assets/images/bottoms/bottom9.png'
-import bag1 from '../assets/images/bags/bag1.png'
-import footwear1 from '../assets/images/footwear/footwear1.png'
+import blackSatinTankTop from '../assets/images/tops/black-satin-tank-top.png'
+import blackTailoredPants from '../assets/images/bottoms/black-tailored-pants.png'
+import blackClutch from '../assets/images/bags/black-clutch.png'
+import blackBalletFlats from '../assets/images/footwear/black-ballet-flats.png'
 
 function Outfits() {
 	const navigate = useNavigate()
@@ -16,8 +16,8 @@ function Outfits() {
 						<div className='outfit-item top'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={top2}
-									alt='Top 2'
+									src={blackSatinTankTop}
+									alt='Black Satin Tank Top'
 									className='outfit-image'
 								/>
 							</div>
@@ -26,8 +26,8 @@ function Outfits() {
 						<div className='outfit-item bag'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bag1}
-									alt='Bag 1'
+									src={blackClutch}
+									alt='Black Clutch'
 									className='outfit-image'
 								/>
 							</div>
@@ -36,8 +36,8 @@ function Outfits() {
 						<div className='outfit-item bottom'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bottom9}
-									alt='Bottom 9'
+									src={blackTailoredPants}
+									alt='Black Tailored Pants'
 									className='outfit-image'
 								/>
 							</div>
@@ -46,8 +46,8 @@ function Outfits() {
 						<div className='outfit-item footwear'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={footwear1}
-									alt='Footwear 1'
+									src={blackBalletFlats}
+									alt='Black Ballet Flats'
 									className='outfit-image'
 								/>
 							</div>
@@ -59,8 +59,8 @@ function Outfits() {
 						<div className='outfit-item top'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={top2}
-									alt='Top 2'
+									src={blackSatinTankTop}
+									alt='Black Satin Tank Top'
 									className='outfit-image'
 								/>
 							</div>
@@ -69,8 +69,8 @@ function Outfits() {
 						<div className='outfit-item bag'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bag1}
-									alt='Bag 1'
+									src={blackClutch}
+									alt='Black Clutch'
 									className='outfit-image'
 								/>
 							</div>
@@ -79,8 +79,8 @@ function Outfits() {
 						<div className='outfit-item bottom'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bottom9}
-									alt='Bottom 9'
+									src={blackTailoredPants}
+									alt='Black Tailored Pants'
 									className='outfit-image'
 								/>
 							</div>
@@ -89,8 +89,8 @@ function Outfits() {
 						<div className='outfit-item footwear'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={footwear1}
-									alt='Footwear 1'
+									src={blackBalletFlats}
+									alt='Black Ballet Flats'
 									className='outfit-image'
 								/>
 							</div>
@@ -102,8 +102,8 @@ function Outfits() {
 						<div className='outfit-item top'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={top2}
-									alt='Top 2'
+									src={blackSatinTankTop}
+									alt='Black Satin Tank Top'
 									className='outfit-image'
 								/>
 							</div>
@@ -112,8 +112,8 @@ function Outfits() {
 						<div className='outfit-item bag'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bag1}
-									alt='Bag 1'
+									src={blackClutch}
+									alt='Black Clutch'
 									className='outfit-image'
 								/>
 							</div>
@@ -122,8 +122,8 @@ function Outfits() {
 						<div className='outfit-item bottom'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bottom9}
-									alt='Bottom 9'
+									src={blackTailoredPants}
+									alt='Black Tailored Pants'
 									className='outfit-image'
 								/>
 							</div>
@@ -132,8 +132,8 @@ function Outfits() {
 						<div className='outfit-item footwear'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={footwear1}
-									alt='Footwear 1'
+									src={blackBalletFlats}
+									alt='Black Ballet Flats'
 									className='outfit-image'
 								/>
 							</div>
@@ -145,8 +145,8 @@ function Outfits() {
 						<div className='outfit-item top'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={top2}
-									alt='Top 2'
+									src={blackSatinTankTop}
+									alt='Black Satin Tank Top'
 									className='outfit-image'
 								/>
 							</div>
@@ -155,8 +155,8 @@ function Outfits() {
 						<div className='outfit-item bag'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bag1}
-									alt='Bag 1'
+									src={blackClutch}
+									alt='Black Clutch'
 									className='outfit-image'
 								/>
 							</div>
@@ -165,8 +165,8 @@ function Outfits() {
 						<div className='outfit-item bottom'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bottom9}
-									alt='Bottom 9'
+									src={blackTailoredPants}
+									alt='Black Tailored Pants'
 									className='outfit-image'
 								/>
 							</div>
@@ -175,8 +175,8 @@ function Outfits() {
 						<div className='outfit-item footwear'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={footwear1}
-									alt='Footwear 1'
+									src={blackBalletFlats}
+									alt='Black Ballet Flats'
 									className='outfit-image'
 								/>
 							</div>
@@ -188,8 +188,8 @@ function Outfits() {
 						<div className='outfit-item top'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={top2}
-									alt='Top 2'
+									src={blackSatinTankTop}
+									alt='Black Satin Tank Top'
 									className='outfit-image'
 								/>
 							</div>
@@ -198,8 +198,8 @@ function Outfits() {
 						<div className='outfit-item bag'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bag1}
-									alt='Bag 1'
+									src={blackClutch}
+									alt='Black Clutch'
 									className='outfit-image'
 								/>
 							</div>
@@ -208,8 +208,8 @@ function Outfits() {
 						<div className='outfit-item bottom'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={bottom9}
-									alt='Bottom 9'
+									src={blackTailoredPants}
+									alt='Black Tailored Pants'
 									className='outfit-image'
 								/>
 							</div>
@@ -218,8 +218,8 @@ function Outfits() {
 						<div className='outfit-item footwear'>
 							<div className='outfit-image-wrapper'>
 								<img
-									src={footwear1}
-									alt='Footwear 1'
+									src={blackBalletFlats}
+									alt='Black Ballet Flats'
 									className='outfit-image'
 								/>
 							</div>
