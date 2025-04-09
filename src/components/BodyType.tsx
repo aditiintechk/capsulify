@@ -60,7 +60,6 @@ function BodyType() {
 									className='body-type-image'
 								/>
 							</div>
-							<p className='body-type-name'>{type.name}</p>
 						</div>
 					))}
 				</div>

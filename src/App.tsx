@@ -19,15 +19,20 @@ function Home() {
 
 	return (
 		<div className='home-container'>
-			<div className='home-card'>
-				<h1 className='home-title'>Capsulify</h1>
-				<p className='home-subtitle'>Never go out of style</p>
+			<div className='home-content'>
+				<h1 className='home-title'>
+					Style that attracts what <span>you desire</span>
+				</h1>
+				<p className='home-subtitle'>
+					We'll help you curate a capsule wardrobe designed for your
+					shape - and the next era of your life!
+				</p>
 				<div className='button-container'>
 					<button
 						onClick={() => navigate('/body-type')}
 						className='next-button'
 					>
-						Next
+						Get Me Styled!
 					</button>
 				</div>
 			</div>

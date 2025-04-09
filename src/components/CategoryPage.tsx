@@ -177,32 +177,29 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 
 	return (
 		<div className='category-container'>
-			<div className='category-card'>
-				<h1 className='category-title'>{title}</h1>
-
-				<div className='category-grid'>
-					{items.map((item) => (
-						<div key={item.id} className='category-item'>
-							<div className='image-wrapper'>
-								<img
-									src={item.image}
-									alt={item.name}
-									className='category-image'
-								/>
-							</div>
-							<p className='category-name'>{item.name}</p>
+			{/* <h1 className='category-title'>{title}</h1> */}
+			<div className='category-grid'>
+				{items.map((item) => (
+					<div key={item.id} className='category-item'>
+						<div className='image-wrapper'>
+							<img
+								src={item.image}
+								alt={item.name}
+								className='category-image'
+							/>
 						</div>
-					))}
-				</div>
+						<p className='category-name'>{item.name}</p>
+					</div>
+				))}
+			</div>
 
-				<div className='button-container'>
-					<button
-						onClick={() => navigate(nextRoute)}
-						className='next-button'
-					>
-						Next
-					</button>
-				</div>
+			<div className='button-container'>
+				<button
+					onClick={() => navigate(nextRoute)}
+					className='next-button'
+				>
+					Next
+				</button>
 			</div>
 		</div>
 	)
