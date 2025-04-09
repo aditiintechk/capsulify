@@ -56,13 +56,17 @@ body {
 
 .home-title {
 	font-size: 3.5rem;
-	font-weight: 600;
+	font-weight: 500;
 	color: var(--accent-color);
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	text-align: center;
-	letter-spacing: 0.2rem;
+	letter-spacing: 0.05rem;
 	line-height: 1.2;
 	text-transform: capitalize;
+}
+
+.home-title span {
+	font-weight: 800;
 }
 
 .home-subtitle {
@@ -261,93 +265,162 @@ body {
 
 /* Body Type Component Styles */
 .body-type-container {
-	padding-top: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	padding: 2rem;
+	margin-top: 3rem;
 	background-color: var(--primary-background);
-	width: 100%;
-	max-width: 1400px;
-	margin: 0 auto;
-}
-
-.body-type-card {
-	width: 95%;
-	max-width: 1400px;
-	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .body-type-title {
-	font-size: 2rem;
-	font-weight: bold;
-	color: var(--accent-color);
-	margin-bottom: 2rem;
 	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 1.8rem;
+	color: var(--accent-color);
+	letter-spacing: 0.05rem;
+	width: 100%;
+	font-weight: 600;
 }
 
 .body-type-grid {
 	display: grid;
-	gap: 1.5rem;
-	grid-template-columns: repeat(1, 1fr);
-	justify-content: center;
-	max-width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	max-width: 1400px;
+	width: 100%;
 	margin: 0 auto;
+	padding: 0 1rem;
+	justify-content: center;
 }
 
 .body-type-item {
+	background: var(--secondary-background);
+	padding: 1rem;
 	cursor: pointer;
-	transition: all 0.2s;
-	border-radius: 0.5rem;
-	padding: 0.25rem;
+	transition: all 0.3s ease;
+	/* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-}
-
-.body-type-image-wrapper {
-	width: 160px;
-	height: 160px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #f3f4f6;
+	border: 1.5px solid transparent;
 	border-radius: 0.5rem;
-	padding: 0.25rem;
-	background-color: transparent;
-}
-
-.body-type-image {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: contain;
-	border-radius: 0.5rem;
-}
-
-.body-type-name {
-	text-align: center;
-	font-weight: 500;
-	color: var(--accent-color);
-	margin-top: 0.25rem;
 }
 
 .body-type-item:hover {
-	box-shadow: 0 0 0 2px rgba(74, 52, 39, 0.3);
+	transform: translateY(-4px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .body-type-item.selected {
-	box-shadow: 0 0 0 4px var(--accent-color);
+	border-color: var(--accent-color);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.body-type-image-wrapper {
+	width: 100%;
+	margin-bottom: 1.5rem;
+	display: flex;
+	justify-content: center;
+}
+
+.body-type-image {
+	height: 200px;
+	object-fit: contain;
+}
+
+.body-type-text-container {
+	text-align: left;
+	width: 100%;
+}
+
+.body-type-name {
+	font-size: 0.8rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.8rem;
+	color: var(--accent-color);
+	font-weight: 800;
+	text-align: left;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+.body-type-description {
+	font-size: 0.8rem;
+	color: var(--accent-color);
+	line-height: 1.5;
+	letter-spacing: 0.05rem;
+	margin: 0;
+	text-align: left;
+	width: 100%;
 }
 
 .button-container {
 	display: flex;
 	justify-content: center;
-	margin-top: 2rem;
+	margin-top: 3rem;
 	width: 100%;
 }
 
+.next-button {
+	background-color: var(--accent-color);
+	color: white;
+	border: none;
+	padding: 0.75rem 2rem;
+	font-size: 1.1rem;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+	background-color: var(--accent-color);
+	opacity: 0.9;
+}
+
 .next-button:disabled {
-	background-color: #9ca3af;
+	background-color: var(--accent-color);
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+	.body-type-grid {
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.body-type-title {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.body-type-image {
+		height: 180px;
+	}
+
+	.body-type-item {
+		padding: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.body-type-container {
+		padding: 1rem;
+	}
+
+	.body-type-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.body-type-title {
+		font-size: 1.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.body-type-image {
+		height: 160px;
+	}
 }
 
 /* Body Type Result Component Styles */
@@ -942,7 +1015,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 1000;

@@ -21,7 +21,7 @@ function Home() {
 		<div className='home-container'>
 			<div className='home-content'>
 				<h1 className='home-title'>
-					Style that attracts what <span>you desire</span>
+					Style that attracts what <span>you</span> desire.
 				</h1>
 				<p className='home-subtitle'>
 					We'll help you curate a capsule wardrobe designed for your
