@@ -93,6 +93,7 @@ body {
 	background-color: var(--primary-background);
 	box-sizing: border-box;
 	position: relative;
+	margin-top: 4rem; /* Add margin to account for navigation height */
 }
 
 .category-title {
@@ -208,6 +209,7 @@ body {
 	/* Mobile - 768px */
 	.category-container {
 		padding: 1rem;
+		margin-top: 3.5rem; /* Adjusted for smaller navigation height */
 	}
 
 	.category-grid {
@@ -276,7 +278,7 @@ body {
 .body-type-title {
 	text-align: center;
 	font-size: 2rem;
-	margin-bottom: 1.8rem;
+	margin-bottom: 1.2rem;
 	color: var(--accent-color);
 	letter-spacing: 0.05rem;
 	width: 100%;
@@ -425,46 +427,108 @@ body {
 
 /* Body Type Result Component Styles */
 .result-container {
+	min-height: calc(100vh - 4rem);
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 1rem;
-	padding-top: 4rem;
+	padding: 2rem;
 	background-color: var(--primary-background);
+	margin-top: 4rem;
+}
+
+.result-card {
+	border-radius: 1rem;
+	padding: 3rem;
 	width: 100%;
 	max-width: 800px;
 	margin: 0 auto;
+	position: relative;
+	padding-bottom: 6rem;
 }
 
-.result-heading {
-	font-size: 1.25rem;
+.result-card p {
 	color: var(--accent-color);
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+	font-size: 1rem;
+	letter-spacing: 0.04rem;
+}
+
+.result-card p:first-child {
+	font-size: 1.5rem;
+	font-weight: 500;
 	margin-bottom: 2rem;
-	text-align: center;
+}
+
+.result-card p:nth-child(3) {
+	font-size: 1.3rem;
+	font-weight: 500;
+	margin-top: 2rem;
 }
 
 .selected-body-type {
-	font-weight: bold;
+	font-weight: 700;
+	color: var(--accent-color);
 	font-style: italic;
 }
 
-.categories-grid {
-	display: grid;
-	gap: 1rem;
-	grid-template-columns: repeat(1, 1fr);
+.recommendations {
+	font-size: 1.2rem;
+	font-weight: 500;
+	/* margin-top: 2rem; */
+	background-color: var(--secondary-background);
+	padding: 0.8rem;
+	border-radius: 0.4rem;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.result-container {
+		padding: 1.5rem;
+	}
+
+	.result-card {
+		padding: 2rem;
+		padding-bottom: 5rem;
+	}
+
+	.result-card p {
+		font-size: 1rem;
+	}
+
+	.result-card p:first-child {
+		font-size: 1.2rem;
+	}
+
+	.result-card p:nth-child(3) {
+		font-size: 1.1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.result-container {
+		padding: 1rem;
+	}
+
+	.result-card {
+		padding: 1.5rem;
+		padding-bottom: 4.5rem;
+	}
+
+	.result-card p:first-child {
+		font-size: 1.1rem;
+	}
+
+	.result-card p:nth-child(3) {
+		font-size: 1rem;
+	}
 }
 
 @media (min-width: 640px) {
 	.body-type-grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2rem;
-	}
-}
-
-@media (min-width: 768px) {
-	.categories-grid,
-	.category-grid {
-		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
@@ -1076,7 +1140,7 @@ body {
 	}
 
 	.logo {
-		height: 3.5rem;
+		height: 2rem;
 	}
 
 	.logo-text {
@@ -1094,6 +1158,6 @@ body {
 	}
 
 	.logo {
-		height: 3.75rem;
+		height: 2rem;
 	}
 }
