@@ -249,7 +249,7 @@ function Inventory() {
 					</ul>
 				</div>
 				<div className='inventory-content'>
-					<h1 className='inventory-title'>{selectedCategory}</h1>
+					<h1 className='inventory-title'>Your Basic Closet</h1>
 					<div className='inventory-grid'>
 						{items.map((item) => (
 							<div key={item.id} className='inventory-item'>

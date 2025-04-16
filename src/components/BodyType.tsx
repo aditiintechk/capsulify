@@ -67,9 +67,7 @@ function BodyType() {
 
 	return (
 		<div className='body-type-container'>
-			<h1 className='body-type-title'>
-				Unsure of your body type? Take the Quiz here!
-			</h1>
+			<h1 className='body-type-title'>Pick Your Body Type!</h1>
 			<div className='body-type-grid'>
 				{bodyTypes.map((type) => (
 					<div
