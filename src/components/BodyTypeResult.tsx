@@ -10,11 +10,11 @@ function BodyTypeResult() {
 			case 'Inverted Triangle':
 				return {
 					description:
-						"we'll guide you to styles that soften and balance your silhouette—highlighting your shoulders while harmonizing your overall look.",
+						'we’ll guide you toward styles that balance your silhouette—softening your shoulders and adding volume to your lower half for a harmonious, flowing look.',
 					recommendations:
 						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
-						'designed to create flow, balance, and effortless allure.',
+						'each chosen to create balance, draw the eye downward, and bring effortless femininity to your wardrobe.',
 				}
 			case 'Rectangle':
 				return {

@@ -17,7 +17,8 @@ import hourglassWhiteLongSleevedTop from '../assets/images/clothing-variations/h
 import hourglassWhiteSatinTop from '../assets/images/clothing-variations/hourglass/tops/white-satin-top.png'
 
 // Import images for Inverted Triangle body type tops
-import invertedTriangleAccentColoredBlouse2 from '../assets/images/clothing-variations/inverted-triangle/tops/accent_colored_blouse_2.png'
+import invertedTriangleAccentColoredBlouse1 from '../assets/images/clothing-variations/inverted-triangle/tops/accent-colored-blouse-1.png'
+import invertedTriangleAccentColoredBlouse2 from '../assets/images/clothing-variations/inverted-triangle/tops/accent-colored-blouse-2.png'
 import invertedTriangleAccentColoredLongSleevedTop from '../assets/images/clothing-variations/inverted-triangle/tops/accent-colored-long-sleeved-top.png'
 import invertedTriangleBlackLongSleevedTop from '../assets/images/clothing-variations/inverted-triangle/tops/black-long-sleeved-top.png'
 import invertedTriangleBlackSatinTop from '../assets/images/clothing-variations/inverted-triangle/tops/black-satin-top.png'
@@ -230,6 +231,11 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 							},
 							{
 								id: 6,
+								name: 'Accent Colored Blouse 1',
+								image: invertedTriangleAccentColoredBlouse1,
+							},
+							{
+								id: 7,
 								name: 'Accent Colored Blouse 2',
 								image: invertedTriangleAccentColoredBlouse2,
 							},
@@ -646,7 +652,11 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 			)} */}
 			<div className='category-grid'>
 				{items.map((item) => (
-					<div key={item.id} className='category-item'>
+					<div
+						key={item.id}
+						className='category-item'
+						data-category={title}
+					>
 						<div className='image-wrapper'>
 							<img
 								src={item.image}

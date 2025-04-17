@@ -132,6 +132,10 @@ body {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.category-item[data-category='Dresses'] {
+	width: 220px;
+}
+
 .image-wrapper {
 	width: 100%;
 	aspect-ratio: 1/1;

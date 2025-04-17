@@ -14,13 +14,6 @@ function BodyType() {
 
 	const bodyTypes = [
 		{
-			id: 'hourglass',
-			name: 'Hourglass',
-			image: hourglass,
-			description:
-				'Balanced shoulders and hips with a well-defined waist. Your curves are evenly proportioned, and your waist naturally stands out.',
-		},
-		{
 			id: 'inverted-triangle',
 			name: 'Inverted Triangle',
 			image: invertedTriangle,
@@ -28,11 +21,11 @@ function BodyType() {
 				'Your shoulders or bust are broader than your hips, with a less defined waist. Your upper body makes a bold statement.',
 		},
 		{
-			id: 'pear',
-			name: 'Pear',
-			image: pear,
+			id: 'rectangle',
+			name: 'Rectangle',
+			image: rectangle,
 			description:
-				'Your hips are wider than your shoulders, with a beautifully defined waist. Your curves draw the eye downward in a graceful flow.',
+				'Your shoulders, waist, and hips are evenly aligned, creating a straight silhouette. You carry an effortlessly sleek, athletic look.',
 		},
 		{
 			id: 'apple',
@@ -42,11 +35,18 @@ function BodyType() {
 				'You carry volume around your midsection with slimmer arms and legs. Your shape shines with softness and strength.',
 		},
 		{
-			id: 'rectangle',
-			name: 'Rectangle',
-			image: rectangle,
+			id: 'pear',
+			name: 'Pear',
+			image: pear,
 			description:
-				'Your shoulders, waist, and hips are evenly aligned, creating a straight silhouette. You carry an effortlessly sleek, athletic look.',
+				'Your hips are wider than your shoulders, with a beautifully defined waist. Your curves draw the eye downward in a graceful flow.',
+		},
+		{
+			id: 'hourglass',
+			name: 'Hourglass',
+			image: hourglass,
+			description:
+				'Balanced shoulders and hips with a well-defined waist. Your curves are evenly proportioned, and your waist naturally stands out.',
 		},
 	]
 
@@ -67,9 +67,7 @@ function BodyType() {
 
 	return (
 		<div className='body-type-container'>
-			<h1 className='body-type-title'>
-				Unsure of your body type? Take the Quiz here!
-			</h1>
+			<h1 className='body-type-title'>Pick Your Body Type!</h1>
 			<div className='body-type-grid'>
 				{bodyTypes.map((type) => (
 					<div
