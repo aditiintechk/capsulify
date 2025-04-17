@@ -8,20 +8,20 @@ function OutfitIntro() {
 			<div className='outfit-intro-card'>
 				<div className='outfit-intro-content'>
 					<p className='outfit-intro-text'>
-						Now, I am going to show you the best part of being here
-						- a list of unique ways we can combine these items to
-						make unique outfits
+						Let's bring your wardrobe to life
 					</p>
 					<p className='outfit-intro-subtext'>
-						ah ha..dont you worry, you can customise your wardrobe
-						with your own clothes later!!
+						Here's where the transformation begins: curated outfit
+						ideas designed to flatter your body and reflect the
+						woman you're becoming. You'll be able to customize
+						everything with your own pieces later on.
 					</p>
 					<div className='button-container'>
 						<button
 							onClick={() => navigate('/outfits')}
 							className='next-button'
 						>
-							Let's go
+							See my looks ✨
 						</button>
 					</div>
 				</div>
