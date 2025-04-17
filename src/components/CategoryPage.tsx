@@ -636,14 +636,14 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 
 	return (
 		<div className='category-container'>
-			{bodyType && (
+			{/* {bodyType && (
 				<div className='body-type-info'>
 					<p>
 						Selected Body Type:{' '}
 						<span className='selected-body-type'>{bodyType}</span>
 					</p>
 				</div>
-			)}
+			)} */}
 			<div className='category-grid'>
 				{items.map((item) => (
 					<div key={item.id} className='category-item'>
