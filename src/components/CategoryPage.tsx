@@ -1,6 +1,8 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 
 // Import images for Apple body type tops
+import appleAccentColoredBlouse1 from '../assets/images/clothing-variations/apple/tops/accent-colored-blouse-1.png'
+import appleAccentColoredBlouse2 from '../assets/images/clothing-variations/apple/tops/accent-colored-blouse-2.png'
 import appleAccentColoredLongSleevedTop from '../assets/images/clothing-variations/apple/tops/accent-colored-long-sleeved-top.png'
 import appleBlackLongSleevedTop from '../assets/images/clothing-variations/apple/tops/black-long-sleeved-top.png'
 import appleBlackSatinTop from '../assets/images/clothing-variations/apple/tops/black-satin-top.png'
@@ -162,6 +164,16 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 								id: 5,
 								name: 'White Satin Top',
 								image: appleWhiteSatinTop,
+							},
+							{
+								id: 6,
+								name: 'Accent Colored Blouse 1',
+								image: appleAccentColoredBlouse1,
+							},
+							{
+								id: 7,
+								name: 'Accent Colored Blouse 2',
+								image: appleAccentColoredBlouse2,
 							},
 						]
 					case 'Hourglass':
