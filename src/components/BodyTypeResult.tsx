@@ -4,7 +4,7 @@ function BodyTypeResult() {
 	const location = useLocation()
 	const navigate = useNavigate()
 	const { bodyType } = location.state || { bodyType: '' }
-
+	console.log(bodyType)
 	const getBodyTypeDescription = (type: string) => {
 		switch (type) {
 			case 'Inverted Triangle':
@@ -77,7 +77,9 @@ function BodyTypeResult() {
 				<p className='benefits'>{benefits}</p>
 				<div className='button-container'>
 					<button
-						onClick={() => navigate('/tops')}
+						onClick={() =>
+							navigate('/tops', { state: { bodyType } })
+						}
 						className='next-button'
 					>
 						Next
