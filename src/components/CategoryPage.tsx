@@ -1,4 +1,5 @@
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useBodyType } from '../context/BodyTypeContext'
 
 // Import images for Apple body type tops
 import appleAccentColoredBlouse1 from '../assets/images/clothing-variations/apple/tops/accent-colored-blouse-1.png'
@@ -131,8 +132,7 @@ interface CategoryPageProps {
 
 function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 	const navigate = useNavigate()
-	const location = useLocation()
-	const { bodyType } = location.state || { bodyType: '' }
+	const { bodyType } = useBodyType()
 
 	const getBodyTypeImages = (bodyType: string, category: string) => {
 		switch (category) {
@@ -650,40 +650,27 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 		}
 	}
 
-	const items = getBodyTypeImages(bodyType, title)
+	const images = getBodyTypeImages(bodyType, title)
 
 	return (
 		<div className='category-container'>
-			{/* {bodyType && (
-				<div className='body-type-info'>
-					<p>
-						Selected Body Type:{' '}
-						<span className='selected-body-type'>{bodyType}</span>
-					</p>
-				</div>
-			)} */}
 			<div className='category-grid'>
-				{items.map((item) => (
-					<div
-						key={item.id}
-						className='category-item'
-						data-category={title}
-					>
-						<div className='image-wrapper'>
+				{images.map((item) => (
+					<div key={item.id} className='category-item'>
+						<div className='category-image-wrapper'>
 							<img
 								src={item.image}
 								alt={item.name}
 								className='category-image'
 							/>
 						</div>
-						<p className='category-name'>{item.name}</p>
+						<div className='category-name'>{item.name}</div>
 					</div>
 				))}
 			</div>
-
 			<div className='button-container'>
 				<button
-					onClick={() => navigate(nextRoute, { state: { bodyType } })}
+					onClick={() => navigate(nextRoute)}
 					className='next-button'
 				>
 					Next

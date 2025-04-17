@@ -1,16 +1,16 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useBodyType } from '../context/BodyTypeContext'
 
 function BodyTypeResult() {
-	const location = useLocation()
 	const navigate = useNavigate()
-	const { bodyType } = location.state || { bodyType: '' }
+	const { bodyType } = useBodyType()
 	console.log(bodyType)
 	const getBodyTypeDescription = (type: string) => {
 		switch (type) {
 			case 'Inverted Triangle':
 				return {
 					description:
-						'we’ll guide you toward styles that balance your silhouette—softening your shoulders and adding volume to your lower half for a harmonious, flowing look.',
+						"we'll guide you toward styles that balance your silhouette—softening your shoulders and adding volume to your lower half for a harmonious, flowing look.",
 					recommendations:
 						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
@@ -77,9 +77,7 @@ function BodyTypeResult() {
 				<p className='benefits'>{benefits}</p>
 				<div className='button-container'>
 					<button
-						onClick={() =>
-							navigate('/tops', { state: { bodyType } })
-						}
+						onClick={() => navigate('/tops')}
 						className='next-button'
 					>
 						Next

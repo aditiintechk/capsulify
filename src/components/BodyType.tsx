@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useBodyType } from '../context/BodyTypeContext'
 
 // Import body type images - corrected path with "bodytypes"
 import hourglass from '../assets/images/bodytypes/hourglass.png'
@@ -11,6 +12,7 @@ import rectangle from '../assets/images/bodytypes/rectangle.png'
 function BodyType() {
 	const [selectedImage, setSelectedImage] = useState<string | null>(null)
 	const navigate = useNavigate()
+	const { setBodyType } = useBodyType()
 
 	const bodyTypes = [
 		{
@@ -59,9 +61,10 @@ function BodyType() {
 			const selectedType = bodyTypes.find(
 				(type) => type.id === selectedImage
 			)
-			navigate('/body-type-result', {
-				state: { bodyType: selectedType?.name },
-			})
+			if (selectedType) {
+				setBodyType(selectedType.name)
+				navigate('/body-type-result')
+			}
 		}
 	}
 
