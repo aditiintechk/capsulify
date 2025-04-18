@@ -53,6 +53,8 @@ import appleDenimJeans from '../assets/images/clothing-variations/apple/bottoms/
 import appleFormalBlackSkirt from '../assets/images/clothing-variations/apple/bottoms/formal-black-skirt.png'
 import appleTailoredBlackPants from '../assets/images/clothing-variations/apple/bottoms/tailored-black-pants.png'
 import appleTailoredBrownPants from '../assets/images/clothing-variations/apple/bottoms/tailored-brown-pants.png'
+import appleTailoredBeigePants from '../assets/images/clothing-variations/apple/bottoms/casual-beige-pants.png'
+import appleBeigeShortsImg from '../assets/images/clothing-variations/apple/bottoms/beige-shorts.png'
 
 // Apple dresses
 import appleCasualDress from '../assets/images/clothing-variations/apple/dresses/casual-dress.png'
@@ -451,23 +453,33 @@ function CategoryPage() {
 							},
 							{
 								id: 2,
+								name: 'Tailored Beige Pants',
+								image: appleTailoredBeigePants,
+							},
+							{
+								id: 3,
 								name: 'Tailored Brown Pants',
 								image: appleTailoredBrownPants,
 							},
 							{
-								id: 3,
+								id: 4,
 								name: 'Formal Black Skirt',
 								image: appleFormalBlackSkirt,
 							},
 							{
-								id: 4,
+								id: 5,
 								name: 'Denim Jeans',
 								image: appleDenimJeans,
 							},
 							{
-								id: 5,
+								id: 6,
 								name: 'Casual Skirt',
 								image: appleCasualSkirt,
+							},
+							{
+								id: 7,
+								name: 'Beige Shorts',
+								image: appleBeigeShortsImg,
 							},
 						]
 					case 'Hourglass':
