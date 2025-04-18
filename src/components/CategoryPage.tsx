@@ -125,8 +125,69 @@ import blackBlazer from '../assets/images/layers/black-blazer.png'
 import blackCardigan from '../assets/images/layers/black-cardigan.png'
 import casualJacket from '../assets/images/layers/casual-jacket.png'
 
+type Category = 'Tops' | 'Bottoms' | 'Dresses' | 'Layers' | 'Bags' | 'Footwear'
+type BodyType =
+	| 'Inverted Triangle'
+	| 'Rectangle'
+	| 'Apple'
+	| 'Pear'
+	| 'Hourglass'
+
+type CategoryTips = Record<Category, string>
+type StylingTips = Record<BodyType, CategoryTips>
+
+const stylingTips: StylingTips = {
+	'Inverted Triangle': {
+		Tops: 'Soft necklines and sleek sleeves to tone down the upper half.',
+		Bottoms: 'Shapes and textures that add volume and balance below.',
+		Dresses: 'Flowy or flared cuts that create symmetry and movement.',
+		Layers: 'Light, hip-length layers that streamline and soften the frame.',
+		Bags: 'Bold accents below to draw attention downward and ground your style.',
+		Footwear:
+			'Bold accents below to draw attention downward and ground your style.',
+	},
+	Rectangle: {
+		Tops: 'Ruching, necklines, and cuts that add curves and femininity.',
+		Bottoms: 'Pieces that cinch the waist or flare slightly for shape.',
+		Dresses: 'Curve-creating styles that sculpt a softer silhouette.',
+		Layers: 'Shapely jackets and cardigans to contour your figure.',
+		Bags: 'Statement pieces that inject personality and visual interest.',
+		Footwear:
+			'Statement pieces that inject personality and visual interest.',
+	},
+	Apple: {
+		Tops: 'Flowy fits and strategic details that skim the midsection.',
+		Bottoms: 'Structured shapes that define your legs and add length.',
+		Dresses:
+			'Empire and wrap styles that highlight your neckline and legs.',
+		Layers: 'Lightweight outerwear that creates gentle shape and elongation.',
+		Bags: 'Elevated accessories to refine your look without adding bulk.',
+		Footwear:
+			'Elevated accessories to refine your look without adding bulk.',
+	},
+	Pear: {
+		Tops: 'Eye-catching details and necklines that bring focus upward.',
+		Bottoms: 'Flattering fits that smooth the hips and elongate your legs.',
+		Dresses: 'A-line and structured styles that glide over the lower half.',
+		Layers: 'Shoulder-enhancing toppers to create harmony and shape.',
+		Bags: 'Strategic accents that balance your look and lift the eye.',
+		Footwear: 'Strategic accents that balance your look and lift the eye.',
+	},
+	Hourglass: {
+		Tops: 'Necklines and fits that draw attention to your waist while balancing curves.',
+		Bottoms:
+			'Streamlined shapes that hug your curves and highlight your symmetry.',
+		Dresses:
+			'Timeless silhouettes that follow your natural shape with elegance.',
+		Layers: 'Waist-defining layers that enhance your proportion without bulk.',
+		Bags: 'Classic staples and accents to keep your look balanced and polished.',
+		Footwear:
+			'Classic staples and accents to keep your look balanced and polished.',
+	},
+}
+
 interface CategoryPageProps {
-	title: string
+	title: Category
 	nextRoute: string
 }
 
@@ -651,9 +712,16 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 	}
 
 	const images = getBodyTypeImages(bodyType, title)
+	const stylingTip = stylingTips[bodyType as BodyType]?.[title]
 
 	return (
 		<div className='category-container'>
+			{stylingTip && (
+				<div className='styling-tip'>
+					<h2 className='category-title'>{title}</h2>
+					<p className='styling-tip-text'>{stylingTip}</p>
+				</div>
+			)}
 			<div className='category-grid'>
 				{images.map((item) => (
 					<div key={item.id} className='category-item'>
