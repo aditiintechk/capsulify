@@ -75,14 +75,21 @@ function BodyTypeResult() {
 				<p>You'll receive tailored recommendations for:</p>
 				<p className='recommendations'>{recommendations}</p>
 				<p className='benefits'>{benefits}</p>
-				<div className='button-container'>
-					<button
-						onClick={() => navigate('/categories')}
-						className='next-button'
-					>
-						Next
-					</button>
-				</div>
+			</div>
+
+			<div className='navigation-arrows-container'>
+				<button
+					className='nav-arrow-button'
+					onClick={() => navigate('/body-type')}
+				>
+					‹
+				</button>
+				<button
+					className='nav-arrow-button'
+					onClick={() => navigate('/categories')}
+				>
+					›
+				</button>
 			</div>
 		</div>
 	)

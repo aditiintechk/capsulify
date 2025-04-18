@@ -851,12 +851,18 @@ function CategoryPage() {
 				</div>
 			</div>
 
-			<div className='button-container'>
+			<div className='navigation-arrows-container'>
 				<button
-					className='next-button'
+					className='nav-arrow-button'
+					onClick={() => navigate('/body-type-result')}
+				>
+					‹
+				</button>
+				<button
+					className='nav-arrow-button'
 					onClick={() => navigate('/outfit-intro')}
 				>
-					Next
+					›
 				</button>
 			</div>
 		</div>

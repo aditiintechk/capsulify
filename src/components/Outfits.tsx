@@ -153,12 +153,18 @@ function Outfits() {
 				</div>
 			</div>
 
-			<div className='button-container'>
+			<div className='navigation-arrows-container'>
 				<button
-					className='next-button'
+					className='nav-arrow-button'
+					onClick={() => navigate('/outfit-intro')}
+				>
+					‹
+				</button>
+				<button
+					className='nav-arrow-button'
 					onClick={() => navigate('/inventory')}
 				>
-					Next
+					›
 				</button>
 			</div>
 		</div>

@@ -16,12 +16,18 @@ function OutfitIntro() {
 						woman you're becoming. You'll be able to customize
 						everything with your own pieces later on.
 					</p>
-					<div className='button-container'>
+					<div className='navigation-arrows-container'>
 						<button
-							onClick={() => navigate('/outfits')}
-							className='next-button'
+							className='nav-arrow-button'
+							onClick={() => navigate('/categories')}
 						>
-							See my looks ✨
+							‹
+						</button>
+						<button
+							className='nav-arrow-button'
+							onClick={() => navigate('/outfits')}
+						>
+							›
 						</button>
 					</div>
 				</div>

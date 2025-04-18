@@ -56,18 +56,6 @@ function BodyType() {
 		setSelectedImage(id)
 	}
 
-	const handleNext = () => {
-		if (selectedImage) {
-			const selectedType = bodyTypes.find(
-				(type) => type.id === selectedImage
-			)
-			if (selectedType) {
-				setBodyType(selectedType.name)
-				navigate('/body-type-result')
-			}
-		}
-	}
-
 	return (
 		<div className='body-type-container'>
 			<h1 className='body-type-title'>Pick Your Body Type!</h1>
@@ -96,13 +84,29 @@ function BodyType() {
 					</div>
 				))}
 			</div>
-			<div className='button-container'>
+			<div className='navigation-arrows-container'>
 				<button
-					onClick={handleNext}
-					className='next-button'
+					className='nav-arrow-button'
+					onClick={() => navigate('/')}
+				>
+					‹
+				</button>
+				<button
+					className='nav-arrow-button'
+					onClick={() => {
+						if (selectedImage) {
+							const selectedType = bodyTypes.find(
+								(type) => type.id === selectedImage
+							)
+							if (selectedType) {
+								setBodyType(selectedType.name)
+								navigate('/body-type-result')
+							}
+						}
+					}}
 					disabled={!selectedImage}
 				>
-					Next
+					›
 				</button>
 			</div>
 		</div>
