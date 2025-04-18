@@ -1070,7 +1070,7 @@ body {
 /* Navigation Bar */
 .navigation-bar {
 	width: 100%;
-	height: 4rem;
+	height: 3.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1094,7 +1094,7 @@ body {
 }
 
 .logo {
-	height: 2rem;
+	height: 1.5rem;
 	padding: 0;
 	width: auto;
 	object-fit: contain;
@@ -1103,10 +1103,10 @@ body {
 }
 
 .logo-text {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 	color: var(--accent-color);
-	letter-spacing: 0.2rem;
+	letter-spacing: 0.15rem;
 	margin-left: 0.25rem;
 }
 
