@@ -930,11 +930,22 @@ body {
 		background-color: var(--primary-background);
 		width: 250px;
 		transition: transform 0.3s ease;
-		box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 	}
 
 	.inventory-sidebar.show {
 		transform: translateX(0);
+	}
+
+	.inventory-sidebar-title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.inventory-categories {
+		padding-left: 1rem;
 	}
 
 	.hamburger-menu {
