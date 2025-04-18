@@ -12,15 +12,19 @@ import OutfitIntro from './components/OutfitIntro'
 import Outfits from './components/Outfits'
 import Inventory from './components/Inventory'
 import GenerateOutfits from './components/GenerateOutfits'
-import Navigation from './components/Navigation'
 import { BodyTypeProvider } from './context/BodyTypeContext'
 
+import logo from '../src/assets/images/logo/logo.svg'
 function Home() {
 	const navigate = useNavigate()
 
 	return (
 		<div className='home-container'>
 			<div className='home-content'>
+				<div className='logo-content'>
+					<img src={logo} alt='Capsulify Logo' className='logo' />
+					<h1 className='logo-text'>CAPSULIFY</h1>
+				</div>
 				<h1 className='home-title'>
 					Style that attracts what <span>you</span> desire.
 				</h1>
@@ -46,7 +50,7 @@ function App() {
 		<BodyTypeProvider>
 			<Router>
 				<div className='app-container'>
-					<Navigation />
+					{/* <Navigation /> */}
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/body-type' element={<BodyType />} />
@@ -54,60 +58,7 @@ function App() {
 							path='/body-type-result'
 							element={<BodyTypeResult />}
 						/>
-						<Route
-							path='/tops'
-							element={
-								<CategoryPage
-									title='Tops'
-									nextRoute='/bottoms'
-								/>
-							}
-						/>
-						<Route
-							path='/bottoms'
-							element={
-								<CategoryPage
-									title='Bottoms'
-									nextRoute='/dresses'
-								/>
-							}
-						/>
-						<Route
-							path='/dresses'
-							element={
-								<CategoryPage
-									title='Dresses'
-									nextRoute='/layers'
-								/>
-							}
-						/>
-						<Route
-							path='/layers'
-							element={
-								<CategoryPage
-									title='Layers'
-									nextRoute='/bags'
-								/>
-							}
-						/>
-						<Route
-							path='/bags'
-							element={
-								<CategoryPage
-									title='Bags'
-									nextRoute='/footwear'
-								/>
-							}
-						/>
-						<Route
-							path='/footwear'
-							element={
-								<CategoryPage
-									title='Footwear'
-									nextRoute='/outfit-intro'
-								/>
-							}
-						/>
+						<Route path='/categories' element={<CategoryPage />} />
 						<Route path='/outfit-intro' element={<OutfitIntro />} />
 						<Route path='/outfits' element={<Outfits />} />
 						<Route path='/inventory' element={<Inventory />} />

@@ -35,112 +35,167 @@ import rectangleSemiCasual from '../assets/images/clothing-variations/rectangle/
 function Outfits() {
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
-	const [currentIndex, setCurrentIndex] = useState(0)
+	const [selectedEvent, setSelectedEvent] = useState('Casual')
 
 	const getEventOutfits = (bodyType: string) => {
-		switch (bodyType) {
-			case 'Apple':
+		switch (bodyType.toLowerCase()) {
+			case 'apple':
 				return [
-					{ id: 1, name: 'Casual', image: appleCasual },
-					{ id: 2, name: 'Date Night', image: appleDateNight },
-					{ id: 3, name: 'Formal', image: appleFormal },
-					{ id: 4, name: 'Semi-Casual', image: appleSemiCasual },
-				]
-			case 'Hourglass':
-				return [
-					{ id: 1, name: 'Casual', image: hourglassCasual },
-					{ id: 2, name: 'Date Night', image: hourglassDateNight },
-					{ id: 3, name: 'Formal', image: hourglassFormal },
-					{ id: 4, name: 'Semi-Casual', image: hourglassSemiCasual },
-				]
-			case 'Inverted Triangle':
-				return [
-					{ id: 1, name: 'Casual', image: invertedTriangleCasual },
+					{
+						id: 1,
+						event: 'Casual',
+						image: appleCasual,
+					},
 					{
 						id: 2,
-						name: 'Date Night',
-						image: invertedTriangleDateNight,
+						event: 'Date Night',
+						image: appleDateNight,
 					},
-					{ id: 3, name: 'Formal', image: invertedTriangleFormal },
+					{
+						id: 3,
+						event: 'Formal',
+						image: appleFormal,
+					},
 					{
 						id: 4,
-						name: 'Semi-Casual',
+						event: 'Semi-Casual',
+						image: appleSemiCasual,
+					},
+				]
+			case 'hourglass':
+				return [
+					{ id: 1, event: 'Casual', image: hourglassCasual },
+					{ id: 2, event: 'Date Night', image: hourglassDateNight },
+					{ id: 3, event: 'Formal', image: hourglassFormal },
+					{ id: 4, event: 'Semi-Casual', image: hourglassSemiCasual },
+				]
+			case 'inverted triangle':
+				return [
+					{ id: 1, event: 'Casual', image: invertedTriangleCasual },
+					{
+						id: 2,
+						event: 'Date Night',
+						image: invertedTriangleDateNight,
+					},
+					{ id: 3, event: 'Formal', image: invertedTriangleFormal },
+					{
+						id: 4,
+						event: 'Semi-Casual',
 						image: invertedTriangleSemiCasual,
 					},
 				]
-			case 'Pear':
+			case 'pear':
 				return [
-					{ id: 1, name: 'Casual', image: pearCasual },
-					{ id: 2, name: 'Date Night', image: pearDateNight },
-					{ id: 3, name: 'Formal', image: pearFormal },
-					{ id: 4, name: 'Semi-Casual', image: pearSemiCasual },
+					{ id: 1, event: 'Casual', image: pearCasual },
+					{ id: 2, event: 'Date Night', image: pearDateNight },
+					{ id: 3, event: 'Formal', image: pearFormal },
+					{ id: 4, event: 'Semi-Casual', image: pearSemiCasual },
 				]
-			case 'Rectangle':
+			case 'rectangle':
 				return [
-					{ id: 1, name: 'Casual', image: rectangleCasual },
-					{ id: 2, name: 'Date Night', image: rectangleDateNight },
-					{ id: 3, name: 'Formal', image: rectangleFormal },
-					{ id: 4, name: 'Semi-Casual', image: rectangleSemiCasual },
+					{ id: 1, event: 'Casual', image: rectangleCasual },
+					{ id: 2, event: 'Date Night', image: rectangleDateNight },
+					{ id: 3, event: 'Formal', image: rectangleFormal },
+					{ id: 4, event: 'Semi-Casual', image: rectangleSemiCasual },
 				]
 			default:
 				return []
 		}
 	}
 
-	const outfits = getEventOutfits(bodyType)
+	const outfits = getEventOutfits(bodyType || 'hourglass')
+	const events = ['Casual', 'Date Night', 'Formal', 'Semi-Casual']
 
-	const handlePrevious = () => {
-		setCurrentIndex((prevIndex) =>
-			prevIndex === 0 ? outfits.length - 1 : prevIndex - 1
-		)
+	const handleEventChange = (event: string) => {
+		setSelectedEvent(event)
 	}
 
-	const handleNext = () => {
-		setCurrentIndex((prevIndex) =>
-			prevIndex === outfits.length - 1 ? 0 : prevIndex + 1
-		)
-	}
+	const currentOutfit =
+		outfits.find((outfit) => outfit.event === selectedEvent) || outfits[0]
 
 	return (
 		<div className='outfits-container'>
+			<div className='category-tabs-container'>
+				<div className='category-tabs'>
+					{events.map((event) => (
+						<button
+							key={event}
+							className={`category-tab ${
+								selectedEvent === event ? 'active' : ''
+							}`}
+							onClick={() => handleEventChange(event)}
+						>
+							{event}
+						</button>
+					))}
+				</div>
+			</div>
+
+			<select
+				className='event-select-mobile'
+				value={selectedEvent}
+				onChange={(e) => handleEventChange(e.target.value)}
+			>
+				{events.map((event) => (
+					<option key={event} value={event}>
+						{event}
+					</option>
+				))}
+			</select>
+
 			<div className='outfits-content'>
-				<div className='outfits-carousel'>
-					<button
-						className='carousel-button prev'
-						onClick={handlePrevious}
-					>
-						‹
-					</button>
-					<div className='outfit-display'>
-						<h2 className='outfit-event-name'>
-							{outfits[currentIndex]?.name}
-						</h2>
-						<div className='outfit-image-container'>
-							<img
-								src={outfits[currentIndex]?.image}
-								alt={outfits[currentIndex]?.name}
-								className='outfit-image'
-							/>
-						</div>
-					</div>
-					<button
-						className='carousel-button next'
-						onClick={handleNext}
-					>
-						›
-					</button>
+				<div className='outfit-display'>
+					<img
+						src={currentOutfit.image}
+						alt={`${selectedEvent} outfit`}
+						className='outfit-image'
+					/>
 				</div>
-				<div className='button-container'>
-					<button
-						onClick={() => navigate('/inventory')}
-						className='next-button'
-					>
-						Take me to the app
-					</button>
-				</div>
+			</div>
+
+			<div className='button-container'>
+				<button
+					className='next-button'
+					onClick={() => navigate('/inventory')}
+				>
+					Next
+				</button>
 			</div>
 		</div>
 	)
 }
+
+/* Original angle bracket navigation code for future use:
+<div className='outfits-carousel'>
+	<button
+		className='carousel-button'
+		onClick={() => setCurrentOutfitIndex((prev) => (prev > 0 ? prev - 1 : prev))}
+		disabled={currentOutfitIndex === 0}
+	>
+		‹
+	</button>
+	<div className='outfit-display'>
+		<p className='outfit-event-name'>{outfits[currentOutfitIndex].event}</p>
+		<div className='outfit-image-container'>
+			<img
+				src={outfits[currentOutfitIndex].image}
+				alt={`${outfits[currentOutfitIndex].event} outfit`}
+				className='outfit-image'
+			/>
+		</div>
+	</div>
+	<button
+		className='carousel-button'
+		onClick={() =>
+			setCurrentOutfitIndex((prev) =>
+				prev < outfits.length - 1 ? prev + 1 : prev
+			)
+		}
+		disabled={currentOutfitIndex === outfits.length - 1}
+	>
+		›
+	</button>
+</div>
+*/
 
 export default Outfits

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
+import { useState, useEffect, useRef } from 'react'
 
 // Import images for Apple body type tops
 import appleAccentColoredBlouse1 from '../assets/images/clothing-variations/apple/tops/accent-colored-blouse-1.png'
@@ -132,68 +133,115 @@ type BodyType =
 	| 'Apple'
 	| 'Pear'
 	| 'Hourglass'
-
 type CategoryTips = Record<Category, string>
-type StylingTips = Record<BodyType, CategoryTips>
 
-const stylingTips: StylingTips = {
-	'Inverted Triangle': {
-		Tops: 'Soft necklines and sleek sleeves to tone down the upper half.',
-		Bottoms: 'Shapes and textures that add volume and balance below.',
-		Dresses: 'Flowy or flared cuts that create symmetry and movement.',
-		Layers: 'Light, hip-length layers that streamline and soften the frame.',
-		Bags: 'Bold accents below to draw attention downward and ground your style.',
-		Footwear:
-			'Bold accents below to draw attention downward and ground your style.',
-	},
-	Rectangle: {
-		Tops: 'Ruching, necklines, and cuts that add curves and femininity.',
-		Bottoms: 'Pieces that cinch the waist or flare slightly for shape.',
-		Dresses: 'Curve-creating styles that sculpt a softer silhouette.',
-		Layers: 'Shapely jackets and cardigans to contour your figure.',
-		Bags: 'Statement pieces that inject personality and visual interest.',
-		Footwear:
-			'Statement pieces that inject personality and visual interest.',
-	},
-	Apple: {
-		Tops: 'Flowy fits and strategic details that skim the midsection.',
-		Bottoms: 'Structured shapes that define your legs and add length.',
-		Dresses:
-			'Empire and wrap styles that highlight your neckline and legs.',
-		Layers: 'Lightweight outerwear that creates gentle shape and elongation.',
-		Bags: 'Elevated accessories to refine your look without adding bulk.',
-		Footwear:
-			'Elevated accessories to refine your look without adding bulk.',
-	},
-	Pear: {
-		Tops: 'Eye-catching details and necklines that bring focus upward.',
-		Bottoms: 'Flattering fits that smooth the hips and elongate your legs.',
-		Dresses: 'A-line and structured styles that glide over the lower half.',
-		Layers: 'Shoulder-enhancing toppers to create harmony and shape.',
-		Bags: 'Strategic accents that balance your look and lift the eye.',
-		Footwear: 'Strategic accents that balance your look and lift the eye.',
-	},
-	Hourglass: {
-		Tops: 'Necklines and fits that draw attention to your waist while balancing curves.',
-		Bottoms:
-			'Streamlined shapes that hug your curves and highlight your symmetry.',
-		Dresses:
-			'Timeless silhouettes that follow your natural shape with elegance.',
-		Layers: 'Waist-defining layers that enhance your proportion without bulk.',
-		Bags: 'Classic staples and accents to keep your look balanced and polished.',
-		Footwear:
-			'Classic staples and accents to keep your look balanced and polished.',
-	},
+function getVisibilityPercentage(rect: DOMRect): number {
+	return (
+		Math.min(Math.max(0, rect.bottom), window.innerHeight) -
+		Math.max(0, rect.top)
+	)
 }
 
-interface CategoryPageProps {
-	title: Category
-	nextRoute: string
-}
-
-function CategoryPage({ title, nextRoute }: CategoryPageProps) {
+function CategoryPage() {
+	const [selectedCategory, setSelectedCategory] = useState<string>('Tops')
+	const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
+
+	useEffect(() => {
+		const handleScroll = () => {
+			let maxVisibility = 0
+			let mostVisibleCategory = selectedCategory
+
+			Object.entries(categoryRefs.current).forEach(
+				([category, element]) => {
+					if (!element) return
+
+					const rect = element.getBoundingClientRect()
+					const visibility = getVisibilityPercentage(rect)
+
+					if (visibility > maxVisibility) {
+						maxVisibility = visibility
+						mostVisibleCategory = category
+					}
+				}
+			)
+
+			if (mostVisibleCategory !== selectedCategory) {
+				setSelectedCategory(mostVisibleCategory)
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [selectedCategory])
+
+	const handleCategoryClick = (category: Category) => {
+		setSelectedCategory(category)
+		categoryRefs.current[category]?.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	const categories: Category[] = [
+		'Tops',
+		'Bottoms',
+		'Dresses',
+		'Layers',
+		'Bags',
+		'Footwear',
+	]
+
+	const stylingTips: Record<BodyType, CategoryTips> = {
+		'Inverted Triangle': {
+			Tops: 'Soft necklines and sleek sleeves to tone down the upper half.',
+			Bottoms: 'Shapes and textures that add volume and balance below.',
+			Dresses: 'Flowy or flared cuts that create symmetry and movement.',
+			Layers: 'Light, hip-length layers that streamline and soften the frame.',
+			Bags: 'Bold accents below to draw attention downward and ground your style.',
+			Footwear:
+				'Bold accents below to draw attention downward and ground your style.',
+		},
+		Rectangle: {
+			Tops: 'Ruching, necklines, and cuts that add curves and femininity.',
+			Bottoms: 'Pieces that cinch the waist or flare slightly for shape.',
+			Dresses: 'Curve-creating styles that sculpt a softer silhouette.',
+			Layers: 'Shapely jackets and cardigans to contour your figure.',
+			Bags: 'Statement pieces that inject personality and visual interest.',
+			Footwear:
+				'Statement pieces that inject personality and visual interest.',
+		},
+		Apple: {
+			Tops: 'Flowy fits and strategic details that skim the midsection.',
+			Bottoms: 'Structured shapes that define your legs and add length.',
+			Dresses:
+				'Empire and wrap styles that highlight your neckline and legs.',
+			Layers: 'Lightweight outerwear that creates gentle shape and elongation.',
+			Bags: 'Elevated accessories to refine your look without adding bulk.',
+			Footwear:
+				'Elevated accessories to refine your look without adding bulk.',
+		},
+		Pear: {
+			Tops: 'Eye-catching details and necklines that bring focus upward.',
+			Bottoms:
+				'Flattering fits that smooth the hips and elongate your legs.',
+			Dresses:
+				'A-line and structured styles that glide over the lower half.',
+			Layers: 'Shoulder-enhancing toppers to create harmony and shape.',
+			Bags: 'Strategic accents that balance your look and lift the eye.',
+			Footwear:
+				'Strategic accents that balance your look and lift the eye.',
+		},
+		Hourglass: {
+			Tops: 'Necklines and fits that draw attention to your waist while balancing curves.',
+			Bottoms:
+				'Streamlined shapes that hug your curves and highlight your symmetry.',
+			Dresses:
+				'Timeless silhouettes that follow your natural shape with elegance.',
+			Layers: 'Waist-defining layers that enhance your proportion without bulk.',
+			Bags: 'Classic staples and accents to keep your look balanced and polished.',
+			Footwear:
+				'Classic staples and accents to keep your look balanced and polished.',
+		},
+	}
 
 	const getBodyTypeImages = (bodyType: string, category: string) => {
 		switch (category) {
@@ -711,35 +759,102 @@ function CategoryPage({ title, nextRoute }: CategoryPageProps) {
 		}
 	}
 
-	const images = getBodyTypeImages(bodyType, title)
-	const stylingTip = stylingTips[bodyType as BodyType]?.[title]
-
 	return (
 		<div className='category-container'>
-			{stylingTip && (
-				<div className='styling-tip'>
-					<h2 className='category-title'>{title}</h2>
-					<p className='styling-tip-text'>{stylingTip}</p>
+			<div className='category-tabs-container'>
+				<div className='category-tabs'>
+					{categories.map((category) => (
+						<button
+							key={category}
+							className={`category-tab ${
+								selectedCategory === category ? 'active' : ''
+							}`}
+							onClick={() =>
+								handleCategoryClick(category as Category)
+							}
+						>
+							{category}
+						</button>
+					))}
 				</div>
-			)}
-			<div className='category-grid'>
-				{images.map((item) => (
-					<div key={item.id} className='category-item'>
-						<div className='category-image-wrapper'>
-							<img
-								src={item.image}
-								alt={item.name}
-								className='category-image'
-							/>
-						</div>
-						<div className='category-name'>{item.name}</div>
-					</div>
-				))}
 			</div>
+
+			<select
+				className='category-select-mobile'
+				value={selectedCategory}
+				onChange={(e) =>
+					handleCategoryClick(e.target.value as Category)
+				}
+			>
+				{categories.map((category) => (
+					<option key={category} value={category}>
+						{category}
+					</option>
+				))}
+			</select>
+
+			<div className='category-section'>
+				<div className='category-content'>
+					{categories.map((category) => {
+						const items = getBodyTypeImages(
+							bodyType || 'hourglass',
+							category
+						)
+						const currentStylingTip = bodyType
+							? stylingTips[bodyType as BodyType]?.[
+									category as Category
+							  ]
+							: ''
+
+						return (
+							<div
+								key={category}
+								className='category-block'
+								ref={(el) => {
+									categoryRefs.current[category] = el
+								}}
+							>
+								{currentStylingTip && (
+									<div className='styling-tip'>
+										<p className='styling-tip-text'>
+											<span className='category'>
+												{category}
+											</span>
+											{currentStylingTip}
+										</p>
+									</div>
+								)}
+
+								<div className='category-grid'>
+									{items.map((item) => (
+										<div
+											key={item.id}
+											className='category-item'
+											data-category={category}
+										>
+											<div className='image-wrapper'>
+												<img
+													src={item.image}
+													alt={item.name}
+													className='category-image'
+												/>
+											</div>
+											<p className='category-name'>
+												{item.name}
+											</p>
+										</div>
+									))}
+								</div>
+							</div>
+						)
+					})}
+				</div>
+			</div>
+
 			<div className='button-container'>
 				<button
-					onClick={() => navigate(nextRoute)}
 					className='next-button'
+					onClick={() => navigate('/outfit-intro')}
 				>
 					Next
 				</button>

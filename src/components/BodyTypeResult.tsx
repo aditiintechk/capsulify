@@ -77,7 +77,7 @@ function BodyTypeResult() {
 				<p className='benefits'>{benefits}</p>
 				<div className='button-container'>
 					<button
-						onClick={() => navigate('/tops')}
+						onClick={() => navigate('/categories')}
 						className='next-button'
 					>
 						Next
