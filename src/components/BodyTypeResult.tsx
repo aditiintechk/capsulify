@@ -12,7 +12,7 @@ function BodyTypeResult() {
 					description:
 						"we'll guide you toward styles that balance your silhouette—softening your shoulders and adding volume to your lower half for a harmonious, flowing look.",
 					recommendations:
-						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
+						'7 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
 						'each chosen to create balance, draw the eye downward, and bring effortless femininity to your wardrobe.',
 				}
@@ -21,7 +21,7 @@ function BodyTypeResult() {
 					description:
 						"we'll help you bring dimension and softness to your naturally sleek silhouette—creating curves where you want them, and ease where you need it.",
 					recommendations:
-						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
+						'7 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
 						'crafted to bring subtle structure, femininity, and versatility',
 				}
@@ -30,7 +30,7 @@ function BodyTypeResult() {
 					description:
 						"we'll focus on styles that elongate your frame and define your shape—so you feel confident, light, and radiant in every outfit.",
 					recommendations:
-						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
+						'7 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
 						'chosen to flatter your proportions and highlight your best features.',
 				}
@@ -39,7 +39,7 @@ function BodyTypeResult() {
 					description:
 						"we'll show you how to balance your silhouette by drawing attention upward and enhancing your waist—while honoring your beautiful curves.",
 					recommendations:
-						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
+						'7 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
 						'that bring harmony, confidence, and quiet magnetism to your wardrobe.',
 				}
@@ -48,7 +48,7 @@ function BodyTypeResult() {
 					description:
 						"we'll help you celebrate your balanced curves with timeless pieces that define your waist and enhance your natural symmetry.",
 					recommendations:
-						'6 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
+						'7 Tops · 7 Bottoms · 2 Dresses · 4 Layers · 3 Bags · 6 Shoes',
 					benefits:
 						'chosen to elevate your shape with elegance and ease.',
 				}
