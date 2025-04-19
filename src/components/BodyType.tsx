@@ -87,12 +87,6 @@ function BodyType() {
 			<div className='navigation-arrows-container'>
 				<button
 					className='nav-arrow-button'
-					onClick={() => navigate('/')}
-				>
-					‹
-				</button>
-				<button
-					className='nav-arrow-button'
 					onClick={() => {
 						if (selectedImage) {
 							const selectedType = bodyTypes.find(

@@ -35,7 +35,7 @@ import rectangleSemiCasual from '../assets/images/clothing-variations/rectangle/
 function Outfits() {
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
-	const [selectedEvent, setSelectedEvent] = useState('Casual')
+	const [currentOutfitIndex, setCurrentOutfitIndex] = useState(0)
 
 	const getEventOutfits = (bodyType: string) => {
 		switch (bodyType.toLowerCase()) {
@@ -104,104 +104,58 @@ function Outfits() {
 	}
 
 	const outfits = getEventOutfits(bodyType || 'hourglass')
-	const events = ['Casual', 'Date Night', 'Formal', 'Semi-Casual']
-
-	const handleEventChange = (event: string) => {
-		setSelectedEvent(event)
-	}
-
-	const currentOutfit =
-		outfits.find((outfit) => outfit.event === selectedEvent) || outfits[0]
 
 	return (
 		<div className='outfits-container'>
-			<div className='category-tabs-container'>
-				<div className='category-tabs'>
-					{events.map((event) => (
-						<button
-							key={event}
-							className={`category-tab ${
-								selectedEvent === event ? 'active' : ''
-							}`}
-							onClick={() => handleEventChange(event)}
-						>
-							{event}
-						</button>
-					))}
-				</div>
-			</div>
-
-			<select
-				className='event-select-mobile'
-				value={selectedEvent}
-				onChange={(e) => handleEventChange(e.target.value)}
-			>
-				{events.map((event) => (
-					<option key={event} value={event}>
-						{event}
-					</option>
-				))}
-			</select>
-
 			<div className='outfits-content'>
-				<div className='outfit-display'>
-					<img
-						src={currentOutfit.image}
-						alt={`${selectedEvent} outfit`}
-						className='outfit-image'
-					/>
+				<div className='outfits-carousel'>
+					<button
+						className='carousel-button'
+						onClick={() =>
+							setCurrentOutfitIndex((prev) =>
+								prev > 0 ? prev - 1 : prev
+							)
+						}
+						disabled={currentOutfitIndex === 0}
+					>
+						‹
+					</button>
+					<div className='outfit-display'>
+						<p className='outfit-event-name'>
+							{outfits[currentOutfitIndex].event}
+						</p>
+						<div className='outfit-image-container'>
+							<img
+								src={outfits[currentOutfitIndex].image}
+								alt={`${outfits[currentOutfitIndex].event} outfit`}
+								className='outfit-image'
+							/>
+						</div>
+					</div>
+					<button
+						className='carousel-button'
+						onClick={() =>
+							setCurrentOutfitIndex((prev) =>
+								prev < outfits.length - 1 ? prev + 1 : prev
+							)
+						}
+						disabled={currentOutfitIndex === outfits.length - 1}
+					>
+						›
+					</button>
 				</div>
 			</div>
 
 			<div className='navigation-arrows-container'>
 				<button
-					className='nav-arrow-button'
-					onClick={() => navigate('/outfit-intro')}
-				>
-					‹
-				</button>
-				<button
-					className='nav-arrow-button'
+					className='next-button'
 					onClick={() => navigate('/inventory')}
 				>
-					›
+					Take me to the app
 				</button>
 			</div>
 		</div>
 	)
 }
-
-/* Original angle bracket navigation code for future use:
-<div className='outfits-carousel'>
-	<button
-		className='carousel-button'
-		onClick={() => setCurrentOutfitIndex((prev) => (prev > 0 ? prev - 1 : prev))}
-		disabled={currentOutfitIndex === 0}
-	>
-		‹
-	</button>
-	<div className='outfit-display'>
-		<p className='outfit-event-name'>{outfits[currentOutfitIndex].event}</p>
-		<div className='outfit-image-container'>
-			<img
-				src={outfits[currentOutfitIndex].image}
-				alt={`${outfits[currentOutfitIndex].event} outfit`}
-				className='outfit-image'
-			/>
-		</div>
-	</div>
-	<button
-		className='carousel-button'
-		onClick={() =>
-			setCurrentOutfitIndex((prev) =>
-				prev < outfits.length - 1 ? prev + 1 : prev
-			)
-		}
-		disabled={currentOutfitIndex === outfits.length - 1}
-	>
-		›
-	</button>
-</div>
-*/
 
 export default Outfits

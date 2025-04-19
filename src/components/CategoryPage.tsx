@@ -791,20 +791,6 @@ function CategoryPage() {
 				</div>
 			</div>
 
-			<select
-				className='category-select-mobile'
-				value={selectedCategory}
-				onChange={(e) =>
-					handleCategoryClick(e.target.value as Category)
-				}
-			>
-				{categories.map((category) => (
-					<option key={category} value={category}>
-						{category}
-					</option>
-				))}
-			</select>
-
 			<div className='category-section'>
 				<div className='category-content'>
 					{categories.map((category) => {
