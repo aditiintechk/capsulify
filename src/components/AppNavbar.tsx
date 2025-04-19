@@ -8,8 +8,8 @@ function AppNavbar() {
 		<nav className='inventory-navigation-bar'>
 			<div className='inventory-navigation-content'>
 				<div className='inventory-logo-container'>
-					<img src={logo} alt='Capsulify Logo' className='logo' />
-					<h1 className='logo-text'>CAPSULIFY</h1>
+					<img src={logo} alt='Capsulify Logo' className='app-logo' />
+					<h1 className='app-logo-text'>CAPSULIFY</h1>
 				</div>
 				<div className='inventory-profile-button'>
 					<button onClick={() => navigate('/profile')}>

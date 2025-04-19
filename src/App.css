@@ -1007,7 +1007,7 @@ body {
 	justify-content: center;
 	color: var(--accent-color);
 	font-size: 1rem;
-	margin-top: 0.5rem;
+	margin-top: 2rem;
 	margin-bottom: 0.5rem;
 }
 
@@ -1154,10 +1154,26 @@ body {
 	height: 100%;
 }
 
+.app-logo {
+	height: 1.8rem;
+	width: auto;
+}
+
+.app-logo-text {
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: var(--accent-color);
+	letter-spacing: 0.1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 	.inventory-layout {
 		padding: 0.5rem;
+	}
+
+	.inventory-header {
+		margin-top: 2.5rem;
 	}
 
 	.inventory-sidebar {
@@ -1623,5 +1639,14 @@ body {
 		bottom: 2rem;
 		gap: 1.2rem;
 		width: 120px;
+	}
+
+	.bottom-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.8rem;
+		bottom: 1.5rem;
+		width: 100%;
 	}
 }
