@@ -997,7 +997,6 @@ body {
 .inventory-container {
 	min-height: 100vh;
 	width: 100%;
-	padding-top: 2rem;
 	background-color: var(--primary-background);
 }
 
@@ -1017,6 +1016,7 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 1rem;
+	/* margin-bottom: 1rem; */
 }
 
 .inventory-sidebar {
@@ -1134,9 +1134,10 @@ body {
 }
 
 /* Hamburger Menu */
+
 .hamburger-menu {
 	display: none;
-	position: fixed;
+	position: absolute;
 	top: 4.5rem;
 	left: 1rem;
 	z-index: 1002;
@@ -1173,7 +1174,8 @@ body {
 	}
 
 	.inventory-header {
-		margin-top: 2.5rem;
+		margin-top: 1.2rem;
+		font-size: 0.875rem;
 	}
 
 	.inventory-sidebar {
@@ -1211,7 +1213,7 @@ body {
 	.inventory-content {
 		width: 100%;
 		padding: 0.5rem;
-		margin-top: 2rem;
+		/* margin-top: 1rem; */
 	}
 
 	.inventory-grid {
@@ -1364,10 +1366,10 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: fixed;
+	/* position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1000;
+	z-index: 1000; */
 	background-color: var(--primary-background);
 }
 
