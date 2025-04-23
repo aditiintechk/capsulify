@@ -12,6 +12,7 @@ import OutfitIntro from './components/OutfitIntro'
 import Outfits from './components/Outfits'
 import Inventory from './components/Inventory'
 import GenerateOutfits from './components/GenerateOutfits'
+import Profile from './components/Profile'
 import { BodyTypeProvider } from './context/BodyTypeContext'
 
 import logo from '../src/assets/images/logo/logo.svg'
@@ -66,6 +67,7 @@ function App() {
 							path='/generate-outfits'
 							element={<GenerateOutfits />}
 						/>
+						<Route path='/profile' element={<Profile />} />
 					</Routes>
 				</div>
 			</Router>

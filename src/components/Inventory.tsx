@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
+import { FaTrash, FaEdit, FaInfoCircle, FaUpload } from 'react-icons/fa'
 import AppNavbar from './AppNavbar'
-import { FaTrash, FaEdit, FaInfoCircle, FaCog } from 'react-icons/fa'
 
 // Import images for Apple body type
 import appleBlackLongSleevedTop from '../assets/images/clothing-variations/apple/tops/black-long-sleeved-top.png'
@@ -664,8 +664,8 @@ function Inventory() {
 		console.log('Show info for item:', itemId)
 	}
 
-	const handleSettings = (itemId: number) => {
-		console.log('Show settings for item:', itemId)
+	const handleUpload = (itemId: number) => {
+		console.log('Upload item:', itemId)
 	}
 
 	return (
@@ -757,8 +757,14 @@ function Inventory() {
 											/>
 										</div>
 
-										{/* Edit icon - top right */}
+										{/* Info and Edit icons - top right */}
 										<div className='inventory-item-icons top-right'>
+											<FaInfoCircle
+												className='inventory-item-icon'
+												onClick={() =>
+													handleInfo(item.id)
+												}
+											/>
 											<FaEdit
 												className='inventory-item-icon'
 												onClick={() =>
@@ -778,18 +784,12 @@ function Inventory() {
 											{item.name}
 										</p>
 
-										{/* Info and Settings icons - bottom right */}
+										{/* Upload icon - bottom right */}
 										<div className='inventory-item-icons bottom-right'>
-											<FaInfoCircle
+											<FaUpload
 												className='inventory-item-icon'
 												onClick={() =>
-													handleInfo(item.id)
-												}
-											/>
-											<FaCog
-												className='inventory-item-icon'
-												onClick={() =>
-													handleSettings(item.id)
+													handleUpload(item.id)
 												}
 											/>
 										</div>
