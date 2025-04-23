@@ -2,6 +2,14 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
 import AppNavbar from './AppNavbar'
+import {
+	FaTrash,
+	FaEdit,
+	FaHeart,
+	FaRegHeart,
+	FaInfoCircle,
+	FaCog,
+} from 'react-icons/fa'
 
 // Import images for Apple body type
 import appleBlackLongSleevedTop from '../assets/images/clothing-variations/apple/tops/black-long-sleeved-top.png'
@@ -118,6 +126,7 @@ import nudeWedges from '../assets/images/shoes/nude-wedges.png'
 function Inventory() {
 	const [selectedCategory, setSelectedCategory] = useState('Tops')
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+	const [favorites, setFavorites] = useState<Record<string, boolean>>({})
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
 	const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
@@ -651,6 +660,29 @@ function Inventory() {
 		console.log('im a plus button')
 	}
 
+	const handleDelete = (itemId: number) => {
+		console.log('Delete item:', itemId)
+	}
+
+	const handleEdit = (itemId: number) => {
+		console.log('Edit item:', itemId)
+	}
+
+	const handleFavorite = (id: string) => {
+		setFavorites((prev) => ({
+			...prev,
+			[id]: !prev[id],
+		}))
+	}
+
+	const handleInfo = (itemId: number) => {
+		console.log('Show info for item:', itemId)
+	}
+
+	const handleSettings = (itemId: number) => {
+		console.log('Show settings for item:', itemId)
+	}
+
 	return (
 		<div className='inventory-container'>
 			<AppNavbar />
@@ -711,9 +743,6 @@ function Inventory() {
 					</ul>
 				</div>
 				<div className='inventory-content'>
-					<div className='inventory-header'>
-						<h2>Your Basic Closet</h2>
-					</div>
 					{categories.map((category) => (
 						<div
 							key={category}
@@ -733,6 +762,46 @@ function Inventory() {
 										key={item.id}
 										className='inventory-item'
 									>
+										{/* Delete icon - top left */}
+										<div className='inventory-item-icons top'>
+											<FaTrash
+												className='inventory-item-icon'
+												onClick={() =>
+													handleDelete(item.id)
+												}
+											/>
+										</div>
+
+										{/* Edit and Favorite icons - top right */}
+										<div className='inventory-item-icons top-right'>
+											{favorites[item.id.toString()] ? (
+												<FaHeart
+													className='inventory-item-icon'
+													onClick={() =>
+														handleFavorite(
+															item.id.toString()
+														)
+													}
+													style={{ color: '#ff4d4d' }}
+												/>
+											) : (
+												<FaRegHeart
+													className='inventory-item-icon'
+													onClick={() =>
+														handleFavorite(
+															item.id.toString()
+														)
+													}
+												/>
+											)}
+											<FaEdit
+												className='inventory-item-icon'
+												onClick={() =>
+													handleEdit(item.id)
+												}
+											/>
+										</div>
+
 										<div className='inventory-image-wrapper'>
 											<img
 												src={item.image}
@@ -743,6 +812,22 @@ function Inventory() {
 										<p className='inventory-item-name'>
 											{item.name}
 										</p>
+
+										{/* Info and Settings icons - bottom right */}
+										<div className='inventory-item-icons bottom-right'>
+											<FaInfoCircle
+												className='inventory-item-icon'
+												onClick={() =>
+													handleInfo(item.id)
+												}
+											/>
+											<FaCog
+												className='inventory-item-icon'
+												onClick={() =>
+													handleSettings(item.id)
+												}
+											/>
+										</div>
 									</div>
 								))}
 								<div
