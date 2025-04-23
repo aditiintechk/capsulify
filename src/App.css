@@ -1158,7 +1158,7 @@ body {
 }
 
 .inventory-item-icon {
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	color: var(--accent-color);
 	cursor: pointer;
 	transition: all 0.2s ease;
