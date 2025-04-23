@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
 import AppNavbar from './AppNavbar'
@@ -99,7 +99,7 @@ import rectangleBeigeShortsImg from '../assets/images/clothing-variations/rectan
 import rectangleBlackDress from '../assets/images/clothing-variations/rectangle/dresses/black-dress.png'
 import rectangleCasualDress from '../assets/images/clothing-variations/rectangle/dresses/casual-dress.png'
 
-// Import images for layers, bags, and footwear (same for all body types)
+// Import images for layers, bags, and shoes (same for all body types)
 import beigeBlazer from '../assets/images/layers/beige-blazer.png'
 import blackBlazer from '../assets/images/layers/black-blazer.png'
 import blackCardigan from '../assets/images/layers/black-cardigan.png'
@@ -109,26 +109,63 @@ import blackClutch from '../assets/images/bags/black-clutch.png'
 import blackTote from '../assets/images/bags/black-tote.png'
 import brownTote from '../assets/images/bags/brown-tote.png'
 
-import blackBalletFlats from '../assets/images/footwear/black-ballet-flats.png'
-import blackPumps from '../assets/images/footwear/black-pumps.png'
-import blackStrappyHeels from '../assets/images/footwear/black-strappy-heels.png'
-import goldStrappySandals from '../assets/images/footwear/gold-strappy-sandals.png'
-import nudeWedges from '../assets/images/footwear/nude-wedges.png'
+import blackBalletFlats from '../assets/images/shoes/black-ballet-flats.png'
+import blackPumps from '../assets/images/shoes/black-pumps.png'
+import blackStrappyHeels from '../assets/images/shoes/black-strappy-heels.png'
+import goldStrappySandals from '../assets/images/shoes/gold-strappy-sandals.png'
+import nudeWedges from '../assets/images/shoes/nude-wedges.png'
 
 function Inventory() {
 	const [selectedCategory, setSelectedCategory] = useState('Tops')
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
+	const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
-	const categories = [
-		'Tops',
-		'Bottoms',
-		'Dresses',
-		'Layers',
-		'Bags',
-		'Footwear',
-	]
+	// Add scroll detection effect
+	useEffect(() => {
+		const handleScroll = () => {
+			let maxVisibility = 0
+			let mostVisibleCategory = selectedCategory
+
+			Object.entries(categoryRefs.current).forEach(
+				([category, element]) => {
+					if (!element) return
+
+					const rect = element.getBoundingClientRect()
+					const visibility =
+						Math.min(Math.max(0, rect.bottom), window.innerHeight) -
+						Math.max(0, rect.top)
+
+					if (visibility > maxVisibility) {
+						maxVisibility = visibility
+						mostVisibleCategory = category
+					}
+				}
+			)
+
+			if (mostVisibleCategory !== selectedCategory) {
+				setSelectedCategory(mostVisibleCategory)
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [selectedCategory])
+
+	const handleCategoryClick = (category: string) => {
+		setSelectedCategory(category)
+		categoryRefs.current[category]?.scrollIntoView({ behavior: 'smooth' })
+		if (window.innerWidth <= 768) {
+			setIsSidebarOpen(false)
+		}
+	}
+
+	const toggleSidebar = () => {
+		setIsSidebarOpen(!isSidebarOpen)
+	}
+
+	const categories = ['Tops', 'Bottoms', 'Dresses', 'Layers', 'Bags', 'Shoes']
 
 	const getImagesForCategory = (category: string) => {
 		switch (category) {
@@ -585,7 +622,7 @@ function Inventory() {
 					{ id: 2, name: 'Black Tote', image: blackTote },
 					{ id: 3, name: 'Brown Tote', image: brownTote },
 				]
-			case 'Footwear':
+			case 'Shoes':
 				return [
 					{
 						id: 1,
@@ -610,11 +647,9 @@ function Inventory() {
 		}
 	}
 
-	const toggleSidebar = () => {
-		setIsSidebarOpen(!isSidebarOpen)
+	const handlePlusClick = () => {
+		console.log('im a plus button')
 	}
-
-	const items = getImagesForCategory(selectedCategory)
 
 	return (
 		<div className='inventory-container'>
@@ -650,17 +685,15 @@ function Inventory() {
 					</svg>
 				)}
 			</button>
-			<div className='inventory-header'>
-				<h2>Your Basic Closet</h2>
-			</div>
-
 			<div className='inventory-layout'>
 				<div
 					className={`inventory-sidebar ${
 						isSidebarOpen ? 'show' : ''
 					}`}
 				>
-					<h2 className='inventory-sidebar-title'>Categories</h2>
+					<div className='inventory-sidebar-title'>
+						<h2>Categories</h2>
+					</div>
 					<ul className='inventory-categories'>
 						{categories.map((category) => (
 							<li
@@ -670,12 +703,7 @@ function Inventory() {
 										? 'active'
 										: ''
 								}`}
-								onClick={() => {
-									setSelectedCategory(category)
-									if (window.innerWidth <= 768) {
-										setIsSidebarOpen(false)
-									}
-								}}
+								onClick={() => handleCategoryClick(category)}
 							>
 								{category}
 							</li>
@@ -683,22 +711,49 @@ function Inventory() {
 					</ul>
 				</div>
 				<div className='inventory-content'>
-					<div className='inventory-grid'>
-						{items.map((item) => (
-							<div key={item.id} className='inventory-item'>
-								<div className='inventory-image-wrapper'>
-									<img
-										src={item.image}
-										alt={item.name}
-										className='inventory-image'
-									/>
-								</div>
-								<p className='inventory-item-name'>
-									{item.name}
-								</p>
-							</div>
-						))}
+					<div className='inventory-header'>
+						<h2>Your Basic Closet</h2>
 					</div>
+					{categories.map((category) => (
+						<div
+							key={category}
+							ref={(el) => {
+								if (el) {
+									categoryRefs.current[category] = el
+								}
+							}}
+							className='category-section'
+						>
+							<h2 className='inventory-category-title'>
+								{category}
+							</h2>
+							<div className='inventory-grid'>
+								{getImagesForCategory(category).map((item) => (
+									<div
+										key={item.id}
+										className='inventory-item'
+									>
+										<div className='inventory-image-wrapper'>
+											<img
+												src={item.image}
+												alt={item.name}
+												className='inventory-image'
+											/>
+										</div>
+										<p className='inventory-item-name'>
+											{item.name}
+										</p>
+									</div>
+								))}
+								<div
+									className='inventory-item add-item'
+									onClick={handlePlusClick}
+								>
+									<div className='plus-sign'>+</div>
+								</div>
+							</div>
+						</div>
+					))}
 				</div>
 			</div>
 			<div className='button-container'>

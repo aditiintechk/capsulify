@@ -115,12 +115,12 @@ import blackClutch from '../assets/images/bags/black-clutch.png'
 import blackTote from '../assets/images/bags/black-tote.png'
 import brownTote from '../assets/images/bags/brown-tote.png'
 
-// Import images for footwear
-import blackBalletFlats from '../assets/images/footwear/black-ballet-flats.png'
-import blackPumps from '../assets/images/footwear/black-pumps.png'
-import blackStrappyHeels from '../assets/images/footwear/black-strappy-heels.png'
-import goldStrappySandals from '../assets/images/footwear/gold-strappy-sandals.png'
-import nudeWedges from '../assets/images/footwear/nude-wedges.png'
+// Import images for shoes
+import blackBalletFlats from '../assets/images/shoes/black-ballet-flats.png'
+import blackPumps from '../assets/images/shoes/black-pumps.png'
+import blackStrappyHeels from '../assets/images/shoes/black-strappy-heels.png'
+import goldStrappySandals from '../assets/images/shoes/gold-strappy-sandals.png'
+import nudeWedges from '../assets/images/shoes/nude-wedges.png'
 
 // Import images for layers
 import beigeBlazer from '../assets/images/layers/beige-blazer.png'
@@ -128,7 +128,7 @@ import blackBlazer from '../assets/images/layers/black-blazer.png'
 import blackCardigan from '../assets/images/layers/black-cardigan.png'
 import casualJacket from '../assets/images/layers/casual-jacket.png'
 
-type Category = 'Tops' | 'Bottoms' | 'Dresses' | 'Layers' | 'Bags' | 'Footwear'
+type Category = 'Tops' | 'Bottoms' | 'Dresses' | 'Layers' | 'Bags' | 'Shoes'
 type BodyType =
 	| 'Inverted Triangle'
 	| 'Rectangle'
@@ -189,7 +189,7 @@ function CategoryPage() {
 		'Dresses',
 		'Layers',
 		'Bags',
-		'Footwear',
+		'Shoes',
 	]
 
 	const stylingTips: Record<BodyType, CategoryTips> = {
@@ -199,8 +199,7 @@ function CategoryPage() {
 			Dresses: 'Flowy or flared cuts that create symmetry and movement.',
 			Layers: 'Light, hip-length layers that streamline and soften the frame.',
 			Bags: 'Bold accents below to draw attention downward and ground your style.',
-			Footwear:
-				'Bold accents below to draw attention downward and ground your style.',
+			Shoes: 'Opt for shoes that add femininity to your look. Strappy sandals and elegant pumps work particularly well.',
 		},
 		Rectangle: {
 			Tops: 'Ruching, necklines, and cuts that add curves and femininity.',
@@ -208,8 +207,7 @@ function CategoryPage() {
 			Dresses: 'Curve-creating styles that sculpt a softer silhouette.',
 			Layers: 'Shapely jackets and cardigans to contour your figure.',
 			Bags: 'Statement pieces that inject personality and visual interest.',
-			Footwear:
-				'Statement pieces that inject personality and visual interest.',
+			Shoes: 'Use shoes to add interest to your outfits. Varied textures and styles can help create visual interest.',
 		},
 		Apple: {
 			Tops: 'Flowy fits and strategic details that skim the midsection.',
@@ -218,8 +216,7 @@ function CategoryPage() {
 				'Empire and wrap styles that highlight your neckline and legs.',
 			Layers: 'Lightweight outerwear that creates gentle shape and elongation.',
 			Bags: 'Elevated accessories to refine your look without adding bulk.',
-			Footwear:
-				'Elevated accessories to refine your look without adding bulk.',
+			Shoes: 'Complete your look with comfortable yet stylish shoes. Ballet flats and low-to-mid heel pumps are great choices for everyday wear.',
 		},
 		Pear: {
 			Tops: 'Eye-catching details and necklines that bring focus upward.',
@@ -229,8 +226,7 @@ function CategoryPage() {
 				'A-line and structured styles that glide over the lower half.',
 			Layers: 'Shoulder-enhancing toppers to create harmony and shape.',
 			Bags: 'Strategic accents that balance your look and lift the eye.',
-			Footwear:
-				'Strategic accents that balance your look and lift the eye.',
+			Shoes: 'Balance your proportions with eye-catching footwear. Statement shoes and heels can draw attention downward elegantly.',
 		},
 		Hourglass: {
 			Tops: 'Necklines and fits that draw attention to your waist while balancing curves.',
@@ -240,8 +236,7 @@ function CategoryPage() {
 				'Timeless silhouettes that follow your natural shape with elegance.',
 			Layers: 'Waist-defining layers that enhance your proportion without bulk.',
 			Bags: 'Classic staples and accents to keep your look balanced and polished.',
-			Footwear:
-				'Classic staples and accents to keep your look balanced and polished.',
+			Shoes: 'Choose shoes that complement your balanced proportions. Any heel height works well, from flats to stilettos.',
 		},
 	}
 
@@ -738,7 +733,7 @@ function CategoryPage() {
 						image: brownTote,
 					},
 				]
-			case 'Footwear':
+			case 'Shoes':
 				return [
 					{
 						id: 1,
