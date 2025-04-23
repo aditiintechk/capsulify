@@ -2,14 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
 import AppNavbar from './AppNavbar'
-import {
-	FaTrash,
-	FaEdit,
-	FaHeart,
-	FaRegHeart,
-	FaInfoCircle,
-	FaCog,
-} from 'react-icons/fa'
+import { FaTrash, FaEdit, FaInfoCircle, FaCog } from 'react-icons/fa'
 
 // Import images for Apple body type
 import appleBlackLongSleevedTop from '../assets/images/clothing-variations/apple/tops/black-long-sleeved-top.png'
@@ -126,7 +119,6 @@ import nudeWedges from '../assets/images/shoes/nude-wedges.png'
 function Inventory() {
 	const [selectedCategory, setSelectedCategory] = useState('Tops')
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-	const [favorites, setFavorites] = useState<Record<string, boolean>>({})
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
 	const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
@@ -668,13 +660,6 @@ function Inventory() {
 		console.log('Edit item:', itemId)
 	}
 
-	const handleFavorite = (id: string) => {
-		setFavorites((prev) => ({
-			...prev,
-			[id]: !prev[id],
-		}))
-	}
-
 	const handleInfo = (itemId: number) => {
 		console.log('Show info for item:', itemId)
 	}
@@ -772,28 +757,8 @@ function Inventory() {
 											/>
 										</div>
 
-										{/* Edit and Favorite icons - top right */}
+										{/* Edit icon - top right */}
 										<div className='inventory-item-icons top-right'>
-											{favorites[item.id.toString()] ? (
-												<FaHeart
-													className='inventory-item-icon'
-													onClick={() =>
-														handleFavorite(
-															item.id.toString()
-														)
-													}
-													style={{ color: '#ff4d4d' }}
-												/>
-											) : (
-												<FaRegHeart
-													className='inventory-item-icon'
-													onClick={() =>
-														handleFavorite(
-															item.id.toString()
-														)
-													}
-												/>
-											)}
 											<FaEdit
 												className='inventory-item-icon'
 												onClick={() =>
