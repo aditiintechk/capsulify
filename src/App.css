@@ -1781,10 +1781,10 @@ body {
 
 .profile-container {
 	display: flex;
-	gap: 1.5rem;
+	gap: 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 2rem;
+	padding: 1rem;
 }
 
 .profile-header {
@@ -1868,15 +1868,14 @@ body {
 }
 
 .profile-name {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 	color: var(--accent-color);
-	margin: 0.5rem 0;
 	text-align: center;
 }
 
 .profile-email {
-	font-size: 0.85rem;
+	font-size: 0.8rem;
 	color: var(--accent-color);
 	opacity: 0.8;
 	text-align: center;
@@ -1904,7 +1903,7 @@ body {
 }
 
 .info-value {
-	font-size: 0.95rem;
+	font-size: 0.75rem;
 	color: var(--accent-color);
 	font-weight: 500;
 }
@@ -1952,7 +1951,7 @@ body {
 	margin-bottom: 1.25rem;
 	text-transform: uppercase;
 	letter-spacing: 0.05rem;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 .preferences-grid {
@@ -1972,20 +1971,23 @@ body {
 	font-weight: 600;
 	color: var(--accent-color);
 	margin-bottom: 0.5rem;
-	opacity: 0.9;
+	opacity: 0.7;
+}
+
+.style-tag:not(:last-child)::after {
+	content: ' |';
+	margin: 0 0.5rem;
 }
 
 .style-tags {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5rem;
+	align-items: center;
 }
 
 .style-tag {
-	background-color: var(--accent-color);
-	color: var(--primary-background);
-	padding: 0.4rem 0.8rem;
-	border-radius: 0.35rem;
+	color: var(--accent-color);
 	font-size: 0.65rem;
 	font-weight: 600;
 	letter-spacing: 0.02rem;
@@ -2023,10 +2025,6 @@ body {
 
 	.profile-basic-info {
 		margin-bottom: 1.5rem;
-	}
-
-	.profile-quick-info {
-		gap: 0.5rem;
 	}
 
 	.profile-text {
