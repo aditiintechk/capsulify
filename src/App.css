@@ -1119,6 +1119,7 @@ body {
 
 .inventory-item {
 	background-color: var(--secondary-background);
+	border: 2px solid var(--secondary-background);
 	border-radius: 0.5rem;
 	padding: 2rem;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1131,6 +1132,7 @@ body {
 .inventory-item:hover {
 	transform: translateY(-4px);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	border: 2px solid var(--accent-color);
 }
 
 .inventory-item-icons {
@@ -1138,6 +1140,12 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.inventory-item:hover .inventory-item-icons {
+	opacity: 1;
 }
 
 .inventory-item-icons.top {
