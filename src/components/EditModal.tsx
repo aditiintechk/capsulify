@@ -88,6 +88,7 @@ function EditModal({ isOpen, onClose, item }: EditModalProps) {
 							className='modal-image'
 						/>
 					</div>
+					<p className='modal-item-name'>{item.name}</p>
 					<button className='reset-button' onClick={handleReset}>
 						<FaUndo />
 						<span>Reset to Default</span>
