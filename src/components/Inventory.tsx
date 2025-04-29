@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
-import { FaTrash, FaEdit, FaInfoCircle, FaUpload } from 'react-icons/fa'
+import { FaTrash, FaEdit, FaInfoCircle } from 'react-icons/fa'
 import AppNavbar from './AppNavbar'
 import EditModal from './EditModal'
 
@@ -672,10 +672,6 @@ function Inventory() {
 		console.log('Show info for item:', itemId)
 	}
 
-	const handleUpload = (itemId: number) => {
-		console.log('Upload item:', itemId)
-	}
-
 	return (
 		<div className='inventory-container'>
 			<AppNavbar />
@@ -787,15 +783,6 @@ function Inventory() {
 										<p className='inventory-item-name'>
 											{item.name}
 										</p>
-
-										<div className='inventory-item-icons bottom-right'>
-											<FaUpload
-												className='inventory-item-icon'
-												onClick={() =>
-													handleUpload(item.id)
-												}
-											/>
-										</div>
 									</div>
 								))}
 								<div
