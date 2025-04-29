@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
 import { FaTrash, FaEdit, FaInfoCircle, FaUpload } from 'react-icons/fa'
 import AppNavbar from './AppNavbar'
+import EditModal from './EditModal'
 
 // Import images for Apple body type
 import appleBlackLongSleevedTop from '../assets/images/clothing-variations/apple/tops/black-long-sleeved-top.png'
@@ -119,6 +120,12 @@ import nudeWedges from '../assets/images/shoes/nude-wedges.png'
 function Inventory() {
 	const [selectedCategory, setSelectedCategory] = useState('Tops')
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+	const [selectedItem, setSelectedItem] = useState<null | {
+		id: number
+		name: string
+		image: string
+	}>(null)
+	const [isModalOpen, setIsModalOpen] = useState(false)
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
 	const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
@@ -656,8 +663,9 @@ function Inventory() {
 		console.log('Delete item:', itemId)
 	}
 
-	const handleEdit = (itemId: number) => {
-		console.log('Edit item:', itemId)
+	const handleEdit = (item: { id: number; name: string; image: string }) => {
+		setSelectedItem(item)
+		setIsModalOpen(true)
 	}
 
 	const handleInfo = (itemId: number) => {
@@ -747,7 +755,6 @@ function Inventory() {
 										key={item.id}
 										className='inventory-item'
 									>
-										{/* Delete icon - top left */}
 										<div className='inventory-item-icons top'>
 											<FaTrash
 												className='inventory-item-icon'
@@ -757,7 +764,6 @@ function Inventory() {
 											/>
 										</div>
 
-										{/* Info and Edit icons - top right */}
 										<div className='inventory-item-icons top-right'>
 											<FaInfoCircle
 												className='inventory-item-icon'
@@ -767,9 +773,7 @@ function Inventory() {
 											/>
 											<FaEdit
 												className='inventory-item-icon'
-												onClick={() =>
-													handleEdit(item.id)
-												}
+												onClick={() => handleEdit(item)}
 											/>
 										</div>
 
@@ -784,7 +788,6 @@ function Inventory() {
 											{item.name}
 										</p>
 
-										{/* Upload icon - bottom right */}
 										<div className='inventory-item-icons bottom-right'>
 											<FaUpload
 												className='inventory-item-icon'
@@ -806,6 +809,18 @@ function Inventory() {
 					))}
 				</div>
 			</div>
+
+			{selectedItem && (
+				<EditModal
+					isOpen={isModalOpen}
+					onClose={() => {
+						setIsModalOpen(false)
+						setSelectedItem(null)
+					}}
+					item={selectedItem}
+				/>
+			)}
+
 			<div className='button-container'>
 				<button
 					className='next-button'
