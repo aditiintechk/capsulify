@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useBodyType } from '../context/BodyTypeContext'
 import { useState, useEffect, useRef } from 'react'
+import { FaInfoCircle } from 'react-icons/fa'
 
 // Import images for Apple body type tops
 import appleAccentColoredBlouse1 from '../assets/images/clothing-variations/apple/tops/accent-colored-blouse-1.png'
@@ -146,6 +147,7 @@ function getVisibilityPercentage(rect: DOMRect): number {
 
 function CategoryPage() {
 	const [selectedCategory, setSelectedCategory] = useState<string>('Tops')
+	const [showTooltip, setShowTooltip] = useState<number | null>(null)
 	const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 	const navigate = useNavigate()
 	const { bodyType } = useBodyType()
@@ -181,6 +183,10 @@ function CategoryPage() {
 	const handleCategoryClick = (category: Category) => {
 		setSelectedCategory(category)
 		categoryRefs.current[category]?.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	const handleInfoClick = (itemId: number) => {
+		setShowTooltip(showTooltip === itemId ? null : itemId)
 	}
 
 	const categories: Category[] = [
@@ -825,6 +831,19 @@ function CategoryPage() {
 											className='category-item'
 											data-category={category}
 										>
+											<div className='info-icon-container'>
+												<FaInfoCircle
+													className='info-icon'
+													onClick={() =>
+														handleInfoClick(item.id)
+													}
+												/>
+												{showTooltip === item.id && (
+													<div className='info-tooltip'>
+														{item.name}
+													</div>
+												)}
+											</div>
 											<div className='image-wrapper'>
 												<img
 													src={item.image}
