@@ -2,6 +2,7 @@
 	--primary-background: #f9f2ec;
 	--secondary-background: #eee7e1;
 	--accent-color: #4a3427;
+	--accent-color-2: #a88f81;
 }
 
 /* Base font size for rem calculations */
@@ -1133,7 +1134,8 @@ body {
 .inventory-item:hover {
 	transform: translateY(-4px);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	border: 2px solid var(--accent-color);
+	border: 2px solid var(--accent-color-2);
+	cursor: pointer;
 }
 
 .inventory-item-icons {
@@ -1166,7 +1168,7 @@ body {
 
 .inventory-item-icon {
 	font-size: 1.3rem;
-	color: var(--accent-color);
+	color: var(--accent-color-2);
 	cursor: pointer;
 	transition: all 0.2s ease;
 	padding: 0.25rem;
@@ -2384,39 +2386,12 @@ body {
 }
 
 .info-icon {
-	color: var(--accent-color);
+	color: var(--accent-color-2);
 	font-size: 1rem;
 	cursor: pointer;
-	transition: transform 0.2s ease, color 0.2s ease;
+	transition: transform 0.2s ease;
 }
 
 .info-icon:hover {
 	transform: scale(1.1);
-	color: var(--accent-hover);
-}
-
-.info-tooltip {
-	position: absolute;
-	top: calc(100% + 5px);
-	right: 0;
-	background-color: var(--accent-color);
-	color: white;
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
-	font-size: 0.75rem;
-	white-space: nowrap;
-	z-index: 3;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.info-tooltip::before {
-	content: '';
-	position: absolute;
-	top: -5px;
-	right: 8px;
-	width: 0;
-	height: 0;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-bottom: 5px solid var(--accent-color);
 }
