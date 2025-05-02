@@ -22,18 +22,29 @@ export async function POST(req: NextApiRequest) {
     if (eventType === "user.created") {
       console.log("New user created:", id);
       // Handle user creation
-      createUser();
+      const { first_name, last_name, username, email_addresses } = evt.data;
+      const user = createUser({
+        name: `${first_name} ${last_name ? last_name : ""}`,
+        username: username!,
+        email: email_addresses[0].email_address,
+        clerkId: id!,
+      });
     }
     if (eventType === "user.updated") {
       console.log("User updated:", id);
       // Handle user update
-      updateUser();
+      const { first_name, last_name, username, email_addresses } = evt.data;
+      const user = updateUser({
+        name: `${first_name} ${last_name ? last_name : ""}`,
+        username: username!,
+        email: email_addresses[0].email_address,
+        clerkId: id!,
+      });
     }
 
     if (eventType === "user.deleted") {
-      console.log("User deleted:", id);
       // Handle user deletion
-      deleteUser();
+      deleteUser(id!);
     }
 
     return new Response("Webhook received", { status: 200 });

@@ -1,20 +1,27 @@
 "use client";
-import {
-  SignedIn,
-  UserButton,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  useAuth,
-} from "@clerk/nextjs";
+import { SignedOut, SignInButton, SignUpButton, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { getUserByClerkId } from "./lib/actions/user.actions";
 
 export default function Home() {
   const router = useRouter();
-  const { isSignedIn } = useAuth();
-  if (isSignedIn) {
-    router.push("/inventory");
-  }
+  const { isSignedIn, userId: clerkId } = useAuth();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      const checkOnboarded = async () => {
+        //@ts-ignore
+        const [user] = await getUserByClerkId(clerkId!);
+        if (user.onboarded === 0) {
+          router.push("/onboarding");
+        }
+        router.push("/inventory");
+      };
+      checkOnboarded();
+    }
+  }, [isSignedIn, router]);
+
   return (
     <div className="home-container">
       <div className="home-content">

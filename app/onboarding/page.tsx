@@ -5,8 +5,11 @@ import { useRouter } from "next/navigation";
 import { BODY_TYPES } from "../constants";
 import { getBodyTypeDescription, getOutfits } from "../constants/utils";
 import { FaInfoCircle } from "react-icons/fa";
+import { updateUserBodyType } from "../lib/actions/user.actions";
+import { useAuth } from "@clerk/nextjs";
 
 export default function OnboardingPage() {
+  const { userId: clerkId } = useAuth();
   const [step, setStep] = useState(1);
   const [bodyType, setBodyType] = useState<string | null>(null);
   const [wardrobe, setWardrobe] = useState<any>({});
@@ -35,7 +38,9 @@ export default function OnboardingPage() {
     setStep((prev) => prev + 1);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    // update user bodyType in database
+    await updateUserBodyType(bodyType!, clerkId as string);
     router.push("/inventory");
   };
 
