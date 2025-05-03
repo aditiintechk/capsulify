@@ -3,6 +3,7 @@ import { SignedOut, SignInButton, SignUpButton, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { getUserByClerkId } from "./lib/actions/user.actions";
+import { BODY_TYPE_ID } from "./constants";
 
 export default function Home() {
   const router = useRouter();
@@ -13,6 +14,11 @@ export default function Home() {
       const checkOnboarded = async () => {
         //@ts-ignore
         const [user] = await getUserByClerkId(clerkId!);
+        // store body type in local storage
+        localStorage.setItem(
+          "bodyType",
+          BODY_TYPE_ID[user.body_type_id as keyof typeof BODY_TYPE_ID]
+        );
         if (user.onboarded === 0) {
           router.push("/onboarding");
         }

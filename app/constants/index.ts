@@ -2,134 +2,132 @@ export const CLOTHING_ITEMS = {
   APPLE: {
     tops: [
       {
-        name: "Top 1",
-        filename: "assets/images/clothing-variations/apple/tops/file-name1.png",
+        name: "Black Long Sleeved Top",
+        filename:
+          "assets/images/clothing-variations/apple/tops/black-long-sleeved-top.png",
       },
       {
-        name: "Top 2",
-        filename: "assets/images/clothing-variations/apple/tops/file-name2.png",
+        name: "White Long Sleeved Top",
+        filename:
+          "assets/images/clothing-variations/apple/tops/white-long-sleeved-top.png",
       },
       {
-        name: "Top 3",
-        filename: "assets/images/clothing-variations/apple/tops/file-name3.png",
+        name: "Accent Colored Long Sleeved Top",
+        filename:
+          "assets/images/clothing-variations/apple/tops/accent-colored-long-sleeved-top.png",
       },
       {
-        name: "Top 4",
-        filename: "assets/images/clothing-variations/apple/tops/file-name4.png",
+        name: "Black Satin Top",
+        filename:
+          "assets/images/clothing-variations/apple/tops/black-satin-top.png",
       },
       {
-        name: "Top 5",
-        filename: "assets/images/clothing-variations/apple/tops/file-name5.png",
+        name: "White Satin Top",
+        filename:
+          "assets/images/clothing-variations/apple/tops/white-satin-top.png",
       },
       {
-        name: "Top 6",
-        filename: "assets/images/clothing-variations/apple/tops/file-name6.png",
+        name: "Accent Colored Blouse 1",
+        filename:
+          "assets/images/clothing-variations/apple/tops/accent-colored-blouse-1.png",
       },
       {
-        name: "Top 7",
-        filename: "assets/images/clothing-variations/apple/tops/file-name7.png",
+        name: "Accent Colored Blouse 2",
+        filename:
+          "assets/images/clothing-variations/apple/tops/accent-colored-blouse-2.png",
       },
     ],
     bottoms: [
       {
-        name: "Bottom 1",
+        name: "Tailored Black Pants",
         filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name1.png",
+          "assets/images/clothing-variations/apple/bottoms/tailored-black-pants.png",
       },
       {
-        name: "Bottom 2",
+        name: "Tailored Brown Pants",
         filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name2.png",
+          "assets/images/clothing-variations/apple/bottoms/tailored-brown-pants.png",
       },
       {
-        name: "Bottom 3",
+        name: "Formal Black Skirt",
         filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name3.png",
+          "assets/images/clothing-variations/apple/bottoms/formal-black-skirt.png",
       },
       {
-        name: "Bottom 4",
+        name: "Denim Jeans",
         filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name4.png",
+          "assets/images/clothing-variations/apple/bottoms/denim-jeans.png",
       },
       {
-        name: "Bottom 5",
+        name: "Casual Skirt",
         filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name5.png",
-      },
-      {
-        name: "Bottom 6",
-        filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name6.png",
-      },
-      {
-        name: "Bottom 7",
-        filename:
-          "assets/images/clothing-variations/apple/bottoms/file-name7.png",
+          "assets/images/clothing-variations/apple/bottoms/casual-skirt.png",
       },
     ],
     dresses: [
       {
-        name: "Dress 1",
+        name: "Little Black Dress",
         filename:
-          "assets/images/clothing-variations/apple/dresses/file-name1.png",
+          "assets/images/clothing-variations/apple/dresses/little-black-dress.png",
       },
       {
-        name: "Dress 2",
+        name: "Casual Dress",
         filename:
-          "assets/images/clothing-variations/apple/dresses/file-name2.png",
+          "assets/images/clothing-variations/apple/dresses/casual-dress.png",
       },
     ],
+
     bags: [
       {
-        name: "Bag 1",
+        name: "Black Clutch",
         filename: "/assets/images/bags/black-clutch.png",
       },
       {
-        name: "Bag 2",
+        name: "Brown Tote",
         filename: "/assets/images/bags/brown-tote.png",
       },
       {
-        name: "Bag 3",
+        name: "Black Tote",
         filename: "/assets/images/bags/black-tote.png",
       },
     ],
-    footwear: [
+    shoes: [
       {
-        name: "Footwear 1",
-        filename: "assets/images/footwear/black-ballet-flats.png",
+        name: "Black Ballet Flats",
+        filename: "assets/images/shoes/black-ballet-flats.png",
       },
       {
-        name: "Footwear 2",
-        filename: "assets/images/footwear/black-pumps.png",
+        name: "Black Pumps",
+        filename: "assets/images/shoes/black-pumps.png",
       },
       {
-        name: "Footwear 3",
-        filename: "assets/images/footwear/black-strappy-heels.png",
+        name: "Black Strappy Heels",
+        filename: "assets/images/shoes/black-strappy-heels.png",
       },
       {
-        name: "Footwear 4",
-        filename: "assets/images/footwear/gold-strappy-sandals.png",
+        name: "Gold Strappy Sandals",
+        filename: "assets/images/shoes/gold-strappy-sandals.png",
       },
       {
-        name: "Footwear 5",
-        filename: "assets/images/footwear/nude-wedges.png",
+        name: "Nude Wedges",
+        filename: "assets/images/shoes/nude-wedges.png",
       },
     ],
     layers: [
       {
-        name: "Layer 1",
+        name: "Beige Blazer",
         filename: "assets/images/layers/beige-blazer.png",
       },
       {
-        name: "Layer 2",
+        name: "Black Blazer",
         filename: "assets/images/layers/black-blazer.png",
       },
       {
-        name: "Layer 3",
+        name: "Black Cardigan",
         filename: "assets/images/layers/black-cardigan.png",
       },
       {
-        name: "Layer 4",
+        name: "Casual Jacket",
         filename: "assets/images/layers/casual-jacket.png",
       },
     ],
@@ -138,134 +136,141 @@ export const CLOTHING_ITEMS = {
   PEAR: {
     tops: [
       {
-        name: "Top 1",
-        filename: "assets/images/clothing-variations/pear/tops/file-name1.png",
+        name: "Black Long Sleeved Top",
+        filename:
+          "assets/images/clothing-variations/pear/tops/black-long-sleeved-top.png",
       },
       {
-        name: "Top 2",
-        filename: "assets/images/clothing-variations/pear/tops/file-name2.png",
+        name: "White Long Sleeved Top",
+        filename:
+          "assets/images/clothing-variations/pear/tops/white-long-sleeved-top.png",
       },
       {
-        name: "Top 3",
-        filename: "assets/images/clothing-variations/pear/tops/file-name3.png",
+        name: "Accent Colored Long Sleeved Top",
+        filename:
+          "assets/images/clothing-variations/pear/tops/accent-colored-long-sleeved-top.png",
       },
       {
-        name: "Top 4",
-        filename: "assets/images/clothing-variations/pear/tops/file-name4.png",
+        name: "Black Satin Top",
+        filename:
+          "assets/images/clothing-variations/pear/tops/black-satin-top.png",
       },
       {
-        name: "Top 5",
-        filename: "assets/images/clothing-variations/pear/tops/file-name5.png",
+        name: "White Satin Top",
+        filename:
+          "assets/images/clothing-variations/pear/tops/white-satin-top.png",
       },
       {
-        name: "Top 6",
-        filename: "assets/images/clothing-variations/pear/tops/file-name6.png",
+        name: "Accent Colored Blouse 1",
+        filename:
+          "assets/images/clothing-variations/pear/tops/accent-colored-blouse-1.png",
       },
       {
-        name: "Top 7",
-        filename: "assets/images/clothing-variations/pear/tops/file-name7.png",
+        name: "Accent Colored Blouse 2",
+        filename:
+          "assets/images/clothing-variations/pear/tops/accent-colored-blouse-2.png",
       },
     ],
     bottoms: [
       {
-        name: "Bottom 1",
+        name: "Tailored Black Pants",
         filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name1.png",
+          "assets/images/clothing-variations/pear/bottoms/tailored-black-pants.png",
       },
       {
-        name: "Bottom 2",
+        name: "Tailored Casual Pants",
         filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name2.png",
+          "assets/images/clothing-variations/pear/bottoms/tailored-casual-pants.png",
       },
       {
-        name: "Bottom 3",
+        name: "Formal Skirt",
         filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name3.png",
+          "assets/images/clothing-variations/pear/bottoms/formal-skirt.png",
       },
       {
-        name: "Bottom 4",
+        name: "Denim Jeans",
         filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name4.png",
+          "assets/images/clothing-variations/pear/bottoms/denim-jeans.png",
       },
       {
-        name: "Bottom 5",
+        name: "Casual Skirt",
         filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name5.png",
+          "assets/images/clothing-variations/pear/bottoms/casual-skirt.png",
       },
       {
-        name: "Bottom 6",
+        name: "Beige Shorts",
         filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name6.png",
+          "assets/images/clothing-variations/pear/bottoms/beige-shorts.png",
       },
-      {
-        name: "Bottom 7",
-        filename:
-          "assets/images/clothing-variations/pear/bottoms/file-name7.png",
-      },
+      // {
+      //   name: "Bottom 7",
+      //   filename:
+      //     "assets/images/clothing-variations/pear/bottoms/file-name7.png",
+      // },
     ],
     dresses: [
       {
-        name: "Dress 1",
+        name: "Black Dress",
         filename:
-          "assets/images/clothing-variations/pear/dresses/file-name1.png",
+          "assets/images/clothing-variations/pear/dresses/black-dress.png",
       },
       {
-        name: "Dress 2",
+        name: "Casual Dress",
         filename:
-          "assets/images/clothing-variations/pear/dresses/file-name2.png",
+          "assets/images/clothing-variations/pear/dresses/casual-dress.png",
       },
     ],
     bags: [
       {
-        name: "Bag 1",
+        name: "Black Clutch",
         filename: "/assets/images/bags/black-clutch.png",
       },
       {
-        name: "Bag 2",
+        name: "Brown Tote",
         filename: "/assets/images/bags/brown-tote.png",
       },
       {
-        name: "Bag 3",
+        name: "Black Tote",
         filename: "/assets/images/bags/black-tote.png",
       },
     ],
-    footwear: [
+    shoes: [
       {
-        name: "Footwear 1",
-        filename: "assets/images/footwear/black-ballet-flats.png",
+        name: "Black Ballet Flats",
+        filename: "assets/images/shoes/black-ballet-flats.png",
       },
       {
-        name: "Footwear 2",
-        filename: "assets/images/footwear/black-pumps.png",
+        name: "Black Pumps",
+        filename: "assets/images/shoes/black-pumps.png",
       },
       {
-        name: "Footwear 3",
-        filename: "assets/images/footwear/black-strappy-heels.png",
+        name: "Black Strappy Heels",
+        filename: "assets/images/shoes/black-strappy-heels.png",
       },
       {
-        name: "Footwear 4",
-        filename: "assets/images/footwear/gold-strappy-sandals.png",
+        name: "Gold Strappy Sandals",
+        filename: "assets/images/shoes/gold-strappy-sandals.png",
       },
       {
-        name: "Footwear 5",
-        filename: "assets/images/footwear/nude-wedges.png",
+        name: "Nude Wedges",
+        filename: "assets/images/shoes/nude-wedges.png",
       },
     ],
     layers: [
       {
-        name: "Layer 1",
+        name: "Beige Blazer",
         filename: "assets/images/layers/beige-blazer.png",
       },
       {
-        name: "Layer 2",
+        name: "Black Blazer",
         filename: "assets/images/layers/black-blazer.png",
       },
       {
-        name: "Layer 3",
+        name: "Black Cardigan",
         filename: "assets/images/layers/black-cardigan.png",
       },
       {
-        name: "Layer 4",
+        name: "Casual Jacket",
         filename: "assets/images/layers/casual-jacket.png",
       },
     ],
@@ -274,141 +279,141 @@ export const CLOTHING_ITEMS = {
   HOURGLASS: {
     tops: [
       {
-        name: "Top 1",
+        name: "Black Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name1.png",
+          "assets/images/clothing-variations/hourglass/tops/black-long-sleeved-top.png",
       },
       {
-        name: "Top 2",
+        name: "White Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name2.png",
+          "assets/images/clothing-variations/hourglass/tops/white-long-sleeved-top.png",
       },
       {
-        name: "Top 3",
+        name: "Accent Colored Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name3.png",
+          "assets/images/clothing-variations/hourglass/tops/accent-colored-long-sleeved-top.png",
       },
       {
-        name: "Top 4",
+        name: "Black Satin Top",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name4.png",
+          "assets/images/clothing-variations/hourglass/tops/black-satin-top.png",
       },
       {
-        name: "Top 5",
+        name: "White Satin Top",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name5.png",
+          "assets/images/clothing-variations/hourglass/tops/white-satin-top.png",
       },
       {
-        name: "Top 6",
+        name: "Accent Colored Blouse 1",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name6.png",
+          "assets/images/clothing-variations/hourglass/tops/accent-colored-blouse-1.png",
       },
       {
-        name: "Top 7",
+        name: "Accent Colored Blouse 2",
         filename:
-          "assets/images/clothing-variations/hourglass/tops/file-name7.png",
+          "assets/images/clothing-variations/hourglass/tops/accent-colored-blouse-2.png",
       },
     ],
     bottoms: [
       {
-        name: "Bottom 1",
+        name: "Black Tailored Pants",
         filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name1.png",
+          "assets/images/clothing-variations/hourglass/bottoms/black-tailored-pants.png",
       },
       {
-        name: "Bottom 2",
+        name: "Beige Tailored Pants",
         filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name2.png",
+          "assets/images/clothing-variations/hourglass/bottoms/beige-tailored-pants.png",
       },
       {
-        name: "Bottom 3",
+        name: "Formal Black Skirt",
         filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name3.png",
+          "assets/images/clothing-variations/hourglass/bottoms/formal-black-skirt.png",
       },
       {
-        name: "Bottom 4",
+        name: "Taupe Casual Pants",
         filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name4.png",
+          "assets/images/clothing-variations/hourglass/bottoms/taupe-casual-pants.png",
       },
       {
-        name: "Bottom 5",
+        name: "Denim Jeans",
         filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name5.png",
+          "assets/images/clothing-variations/hourglass/bottoms/denim-jeans.png",
       },
       {
-        name: "Bottom 6",
+        name: "Casual Skirt",
         filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name6.png",
+          "assets/images/clothing-variations/hourglass/bottoms/casual-skirt.png",
       },
-      {
-        name: "Bottom 7",
-        filename:
-          "assets/images/clothing-variations/hourglass/bottoms/file-name7.png",
-      },
+      // {
+      //   name: "Bottom 7",
+      //   filename:
+      //     "assets/images/clothing-variations/hourglass/bottoms/file-name7.png",
+      // },
     ],
     dresses: [
       {
-        name: "Dress 1",
+        name: "Black Dress",
         filename:
-          "assets/images/clothing-variations/hourglass/dresses/file-name1.png",
+          "assets/images/clothing-variations/hourglass/dresses/black-dress.png",
       },
       {
-        name: "Dress 2",
+        name: "Casual Dress",
         filename:
-          "assets/images/clothing-variations/hourglass/dresses/file-name2.png",
+          "assets/images/clothing-variations/hourglass/dresses/casual-dress.png",
       },
     ],
     bags: [
       {
-        name: "Bag 1",
+        name: "Black Clutch",
         filename: "/assets/images/bags/black-clutch.png",
       },
       {
-        name: "Bag 2",
+        name: "Brown Tote",
         filename: "/assets/images/bags/brown-tote.png",
       },
       {
-        name: "Bag 3",
+        name: "Black Tote",
         filename: "/assets/images/bags/black-tote.png",
       },
     ],
-    footwear: [
+    shoes: [
       {
-        name: "Footwear 1",
-        filename: "assets/images/footwear/black-ballet-flats.png",
+        name: "Black Ballet Flats",
+        filename: "assets/images/shoes/black-ballet-flats.png",
       },
       {
-        name: "Footwear 2",
-        filename: "assets/images/footwear/black-pumps.png",
+        name: "Black Pumps",
+        filename: "assets/images/shoes/black-pumps.png",
       },
       {
-        name: "Footwear 3",
-        filename: "assets/images/footwear/black-strappy-heels.png",
+        name: "Black Strappy Heels",
+        filename: "assets/images/shoes/black-strappy-heels.png",
       },
       {
-        name: "Footwear 4",
-        filename: "assets/images/footwear/gold-strappy-sandals.png",
+        name: "Gold Strappy Sandals",
+        filename: "assets/images/shoes/gold-strappy-sandals.png",
       },
       {
-        name: "Footwear 5",
-        filename: "assets/images/footwear/nude-wedges.png",
+        name: "Nude Wedges",
+        filename: "assets/images/shoes/nude-wedges.png",
       },
     ],
     layers: [
       {
-        name: "Layer 1",
+        name: "Beige Blazer",
         filename: "assets/images/layers/beige-blazer.png",
       },
       {
-        name: "Layer 2",
+        name: "Black Blazer",
         filename: "assets/images/layers/black-blazer.png",
       },
       {
-        name: "Layer 3",
+        name: "Black Cardigan",
         filename: "assets/images/layers/black-cardigan.png",
       },
       {
-        name: "Layer 4",
+        name: "Casual Jacket",
         filename: "assets/images/layers/casual-jacket.png",
       },
     ],
@@ -416,141 +421,141 @@ export const CLOTHING_ITEMS = {
   RECTANGLE: {
     tops: [
       {
-        name: "Top 1",
+        name: "Black Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name1.png",
+          "assets/images/clothing-variations/rectangle/tops/black-long-sleeved-top.png",
       },
       {
-        name: "Top 2",
+        name: "White Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name2.png",
+          "assets/images/clothing-variations/rectangle/tops/white-long-sleeved-top.png",
       },
       {
-        name: "Top 3",
+        name: "Accent Colored Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name3.png",
+          "assets/images/clothing-variations/rectangle/tops/accent-colored-long-sleeved-top.png",
       },
       {
-        name: "Top 4",
+        name: "Black Satin Top",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name4.png",
+          "assets/images/clothing-variations/rectangle/tops/black-satin-top.png",
       },
       {
-        name: "Top 5",
+        name: "White Satin Top",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name5.png",
+          "assets/images/clothing-variations/rectangle/tops/white-satin-top.png",
       },
       {
-        name: "Top 6",
+        name: "Accent Colored Blouse 1",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name6.png",
+          "assets/images/clothing-variations/rectangle/tops/accent-colored-blouse-1.png",
       },
       {
-        name: "Top 7",
+        name: "Accent Colored Blouse 2",
         filename:
-          "assets/images/clothing-variations/rectangle/tops/file-name7.png",
+          "assets/images/clothing-variations/rectangle/tops/accent-colored-blouse-2.png",
       },
     ],
     bottoms: [
       {
-        name: "Bottom 1",
+        name: "Tailored Black Pants",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name1.png",
+          "assets/images/clothing-variations/rectangle/bottoms/tailored-black-pants.png",
       },
       {
-        name: "Bottom 2",
+        name: "Tailored Beige Pants",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name2.png",
+          "assets/images/clothing-variations/rectangle/bottoms/tailored-beige-pants.png",
       },
       {
-        name: "Bottom 3",
+        name: "Black Formal Skirt",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name3.png",
+          "assets/images/clothing-variations/rectangle/bottoms/black-formal-skirt.png",
       },
       {
-        name: "Bottom 4",
+        name: "Taupe Tailored Pants",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name4.png",
+          "assets/images/clothing-variations/rectangle/bottoms/taupe-tailored-pants.png",
       },
       {
-        name: "Bottom 5",
+        name: "Denim Jeans",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name5.png",
+          "assets/images/clothing-variations/rectangle/bottoms/denim-jeans.png",
       },
       {
-        name: "Bottom 6",
+        name: "Casual Skirt",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name6.png",
+          "assets/images/clothing-variations/rectangle/bottoms/casual-skirt.png",
       },
       {
-        name: "Bottom 7",
+        name: "Beige Shorts",
         filename:
-          "assets/images/clothing-variations/rectangle/bottoms/file-name7.png",
+          "assets/images/clothing-variations/rectangle/bottoms/beige-shorts.png",
       },
     ],
     dresses: [
       {
-        name: "Dress 1",
+        name: "Black Dress",
         filename:
-          "assets/images/clothing-variations/rectangle/dresses/file-name1.png",
+          "assets/images/clothing-variations/rectangle/dresses/black-dress.png",
       },
       {
-        name: "Dress 2",
+        name: "Casual Dress",
         filename:
-          "assets/images/clothing-variations/rectangle/dresses/file-name2.png",
+          "assets/images/clothing-variations/rectangle/dresses/casual-dress.png",
       },
     ],
     bags: [
       {
-        name: "Bag 1",
+        name: "Black Clutch",
         filename: "/assets/images/bags/black-clutch.png",
       },
       {
-        name: "Bag 2",
+        name: "Brown Tote",
         filename: "/assets/images/bags/brown-tote.png",
       },
       {
-        name: "Bag 3",
+        name: "Black Tote",
         filename: "/assets/images/bags/black-tote.png",
       },
     ],
-    footwear: [
+    shoes: [
       {
-        name: "Footwear 1",
-        filename: "assets/images/footwear/black-ballet-flats.png",
+        name: "Black Ballet Flats",
+        filename: "assets/images/shoes/black-ballet-flats.png",
       },
       {
-        name: "Footwear 2",
-        filename: "assets/images/footwear/black-pumps.png",
+        name: "Black Pumps",
+        filename: "assets/images/shoes/black-pumps.png",
       },
       {
-        name: "Footwear 3",
-        filename: "assets/images/footwear/black-strappy-heels.png",
+        name: "Black Strappy Heels",
+        filename: "assets/images/shoes/black-strappy-heels.png",
       },
       {
-        name: "Footwear 4",
-        filename: "assets/images/footwear/gold-strappy-sandals.png",
+        name: "Gold Strappy Sandals",
+        filename: "assets/images/shoes/gold-strappy-sandals.png",
       },
       {
-        name: "Footwear 5",
-        filename: "assets/images/footwear/nude-wedges.png",
+        name: "Nude Wedges",
+        filename: "assets/images/shoes/nude-wedges.png",
       },
     ],
     layers: [
       {
-        name: "Layer 1",
+        name: "Beige Blazer",
         filename: "assets/images/layers/beige-blazer.png",
       },
       {
-        name: "Layer 2",
+        name: "Black Blazer",
         filename: "assets/images/layers/black-blazer.png",
       },
       {
-        name: "Layer 3",
+        name: "Black Cardigan",
         filename: "assets/images/layers/black-cardigan.png",
       },
       {
-        name: "Layer 4",
+        name: "Casual Jacket",
         filename: "assets/images/layers/casual-jacket.png",
       },
     ],
@@ -558,141 +563,141 @@ export const CLOTHING_ITEMS = {
   INVERTED_TRIANGLE: {
     tops: [
       {
-        name: "Top 1",
+        name: "Black Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name1.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/black-long-sleeved-top.png",
       },
       {
-        name: "Top 2",
+        name: "White Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name2.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/white-long-sleeved-top.png",
       },
       {
-        name: "Top 3",
+        name: "Accent Colored Long Sleeved Top",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name3.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/accent-colored-long-sleeved-top.png",
       },
       {
-        name: "Top 4",
+        name: "Black Satin Top",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name4.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/black-satin-top.png",
       },
       {
-        name: "Top 5",
+        name: "White Satin Top",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name5.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/white-satin-top.png",
       },
       {
-        name: "Top 6",
+        name: "Accent Colored Blouse 1",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name6.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/accent-colored-blouse-1.png",
       },
       {
-        name: "Top 7",
+        name: "Accent Colored Blouse 2",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/tops/file-name7.png",
+          "assets/images/clothing-variations/inverted-triangle/tops/accent-colored-blouse-2.png",
       },
     ],
     bottoms: [
       {
-        name: "Bottom 1",
+        name: "Black Tailored Pants",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name1.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/black-tailored-pants.png",
       },
       {
-        name: "Bottom 2",
+        name: "Beige Tailored Pants",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name2.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/beige-tailored-pants.png",
       },
       {
-        name: "Bottom 3",
+        name: "Black Formal Skirt",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name3.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/black-formal-skirt.png",
       },
       {
-        name: "Bottom 4",
+        name: "Taupe Casual Pants",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name4.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/taupe-casual-pants.png",
       },
       {
-        name: "Bottom 5",
+        name: "Denim Jeans",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name5.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/denim-jeans.png",
       },
       {
-        name: "Bottom 6",
+        name: "Casual Skirt",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name6.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/casual-skirt.png",
       },
       {
-        name: "Bottom 7",
+        name: "Beige Shorts",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/bottoms/file-name7.png",
+          "assets/images/clothing-variations/inverted-triangle/bottoms/beige-shorts.png",
       },
     ],
     dresses: [
       {
-        name: "Dress 1",
+        name: "Black Dress",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/dresses/file-name1.png",
+          "assets/images/clothing-variations/inverted-triangle/dresses/black-dress.png",
       },
       {
-        name: "Dress 2",
+        name: "Casual Dress",
         filename:
-          "assets/images/clothing-variations/inverted-triangle/dresses/file-name2.png",
+          "assets/images/clothing-variations/inverted-triangle/dresses/casual-dress.png",
       },
     ],
     bags: [
       {
-        name: "Bag 1",
+        name: "Black Clutch",
         filename: "/assets/images/bags/black-clutch.png",
       },
       {
-        name: "Bag 2",
+        name: "Brown Tote",
         filename: "/assets/images/bags/brown-tote.png",
       },
       {
-        name: "Bag 3",
+        name: "Black Tote",
         filename: "/assets/images/bags/black-tote.png",
       },
     ],
-    footwear: [
+    shoes: [
       {
-        name: "Footwear 1",
-        filename: "assets/images/footwear/black-ballet-flats.png",
+        name: "Black Ballet Flats",
+        filename: "assets/images/shoes/black-ballet-flats.png",
       },
       {
-        name: "Footwear 2",
-        filename: "assets/images/footwear/black-pumps.png",
+        name: "Black Pumps",
+        filename: "assets/images/shoes/black-pumps.png",
       },
       {
-        name: "Footwear 3",
-        filename: "assets/images/footwear/black-strappy-heels.png",
+        name: "Black Strappy Heels",
+        filename: "assets/images/shoes/black-strappy-heels.png",
       },
       {
-        name: "Footwear 4",
-        filename: "assets/images/footwear/gold-strappy-sandals.png",
+        name: "Gold Strappy Sandals",
+        filename: "assets/images/shoes/gold-strappy-sandals.png",
       },
       {
-        name: "Footwear 5",
-        filename: "assets/images/footwear/nude-wedges.png",
+        name: "Nude Wedges",
+        filename: "assets/images/shoes/nude-wedges.png",
       },
     ],
     layers: [
       {
-        name: "Layer 1",
+        name: "Beige Blazer",
         filename: "assets/images/layers/beige-blazer.png",
       },
       {
-        name: "Layer 2",
+        name: "Black Blazer",
         filename: "assets/images/layers/black-blazer.png",
       },
       {
-        name: "Layer 3",
+        name: "Black Cardigan",
         filename: "assets/images/layers/black-cardigan.png",
       },
       {
-        name: "Layer 4",
+        name: "Casual Jacket",
         filename: "assets/images/layers/casual-jacket.png",
       },
     ],
@@ -736,3 +741,11 @@ export const BODY_TYPES = [
     clothingItems: CLOTHING_ITEMS.INVERTED_TRIANGLE,
   },
 ];
+
+export const BODY_TYPE_ID = {
+  1: "Apple",
+  2: "Pear",
+  3: "Hourglass",
+  4: "Rectangle",
+  5: "Inverted Triangle",
+};
