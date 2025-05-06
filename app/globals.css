@@ -37,6 +37,18 @@
   background-color: #f9f2ec;
 }
 
+.bg-accent {
+  background-color: #4a3427;
+}
+
+.bg-accent-2 {
+  background-color: #a88f81;
+}
+
+.bg-secondary {
+  background-color: #eee7e1;
+}
+
 /* Base font size for rem calculations */
 html {
   font-size: 16px; /* Base font size */
@@ -148,7 +160,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .category-tabs-container {
@@ -188,7 +200,7 @@ body {
   background: none;
   border: none;
   padding: 0.6rem 1rem;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--accent-color);
   cursor: pointer;
   white-space: nowrap;
@@ -198,6 +210,7 @@ body {
   text-transform: uppercase;
   width: 110px;
   letter-spacing: 0.5px;
+  border: 1px solid var(--accent-color);
 }
 
 .category-tab:hover {
@@ -382,7 +395,7 @@ body {
   }
 
   .category-section {
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding-top: 1rem;
   }
 
@@ -461,7 +474,6 @@ body {
 
   .category-tab {
     padding: 0.5rem 0.75rem;
-    font-size: 0.7rem;
     width: 100px;
   }
 }
@@ -1330,7 +1342,7 @@ body {
 
   .category-section {
     margin-bottom: 3rem;
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 4rem;
   }
 
   .category-title {
@@ -1723,14 +1735,9 @@ body {
 
   .category-tab {
     padding: 0.5rem 0.75rem;
-    font-size: 0.7rem;
     width: fit-content;
     flex-shrink: 0;
     text-align: center;
-  }
-
-  .category-section {
-    margin-top: 3.5rem;
   }
 
   /* Remove mobile dropdown styles */
@@ -1818,7 +1825,7 @@ body {
 }
 
 .plus-sign {
-  font-size: 3rem;
+  font-size: 5rem;
   color: var(--accent-color);
   font-weight: 300;
 }

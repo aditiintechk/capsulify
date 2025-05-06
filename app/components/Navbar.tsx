@@ -1,50 +1,22 @@
 "use client";
-import { SignedIn, useUser } from "@clerk/nextjs";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { SignedIn } from "@clerk/nextjs";
+import LogoutButton from "./LogoutButton";
+import Logo from "./Logo";
+import ProfileIcon from "./ProfileIcon";
 
 function Navbar() {
-  const router = useRouter();
-  const { user } = useUser();
-
   return (
     <nav className="inventory-navigation-bar">
       <div className="inventory-navigation-content">
-        <div
-          className="inventory-logo-container cursor-pointer"
-          onClick={() => router.push("/")}
-        >
-          <img
-            src="/assets/images/logo/logo.svg"
-            alt="Capsulify Logo"
-            className="app-logo"
-          />
-        </div>
-
-        <button
-          onClick={() => router.push("/profile")}
-          className="cursor-pointer"
-        >
+        <Logo />
+        <div className="cursor-pointer">
           <SignedIn>
-            <div className="rounded-full">
-              {user?.imageUrl ? (
-                <Image
-                  src={user?.imageUrl}
-                  alt="Profile Image"
-                  width={32}
-                  height={32}
-                  className="rounded-full"
-                />
-              ) : (
-                <p className="w-full h-full font-bold cursor-pointer">
-                  {`${user?.firstName?.charAt(0).toUpperCase()}${user?.lastName
-                    ?.charAt(0)
-                    .toUpperCase()}`}
-                </p>
-              )}
+            <div className="flex gap-4 text-xs items-center justify-center">
+              <LogoutButton />
+              <ProfileIcon />
             </div>
           </SignedIn>
-        </button>
+        </div>
       </div>
     </nav>
   );

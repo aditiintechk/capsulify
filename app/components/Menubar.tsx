@@ -2,7 +2,6 @@
 
 import { StoreIcon, User } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image";
 import React, { ReactNode } from "react";
 import { TbHanger } from "react-icons/tb";
 type MenubarItem = {

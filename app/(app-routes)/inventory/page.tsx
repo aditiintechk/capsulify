@@ -16,7 +16,7 @@ export default function InventoryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("tops");
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   useEffect(() => {
-    const storedBodyType = localStorage.getItem("bodyType");
+    const storedBodyType = sessionStorage.getItem("bodyType");
     if (storedBodyType) {
       setBodyType(storedBodyType);
     }
@@ -79,7 +79,7 @@ export default function InventoryPage() {
             ))}
         </div>
       </div>
-      <div className="mx-auto w-[80%] max-sm:w-full max-sm:px-4 mt-2">
+      <div className="mx-auto w-[80%] max-sm:w-full">
         {inventory !== undefined &&
           Object.keys(inventory).map((category) => (
             <div
@@ -97,21 +97,21 @@ export default function InventoryPage() {
                   (item: any) => (
                     <div key={item.name} className="inventory-item">
                       <div className="inventory-item-icons top">
-                        <FaTrash
+                        {/* <FaTrash
                           className="inventory-item-icon"
                           onClick={() => {}}
-                        />
+                        /> */}
                       </div>
 
                       <div className="inventory-item-icons top-right">
-                        <FaInfoCircle
+                        {/* <FaInfoCircle
+                          className="inventory-item-icon"
+                          onClick={() => {}}
+                        /> */}
+                        <FaEdit
                           className="inventory-item-icon"
                           onClick={() => {}}
                         />
-                        {/* <FaEdit
-                    className="inventory-item-icon"
-                    onClick={() => handleEdit(item)}
-                  /> */}
                       </div>
 
                       <div className="inventory-image-wrapper">
