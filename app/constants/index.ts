@@ -743,9 +743,9 @@ export const BODY_TYPES = [
 ];
 
 export const BODY_TYPE_ID = {
-  1: "Apple",
-  2: "Pear",
-  3: "Hourglass",
-  4: "Rectangle",
-  5: "Inverted Triangle",
+  1: "Inverted Triangle",
+  2: "Rectangle",
+  3: "Apple",
+  4: "Pear",
+  5: "Hourglass",
 };

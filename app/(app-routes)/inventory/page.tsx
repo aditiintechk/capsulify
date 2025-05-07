@@ -1,5 +1,5 @@
 "use client";
-import { FaTrash, FaInfoCircle, FaEdit } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { CLOTHING_ITEMS } from "../../constants";
 import { useState, useEffect, useRef } from "react";
 
