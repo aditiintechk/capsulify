@@ -10,10 +10,10 @@ export const createUser = async (params: CreateUserParams) => {
 		const { name, username, email, clerkId } = params
 
 		const createUserQuery = `
-      INSERT INTO users (name, username, email, clerk_id)
-      VALUES (?, ?, ?, ?)
+      INSERT INTO capsulify_live.users (name, username, email, clerk_id)
+      VALUES ($1, $2, $3, $4)
     `
-		const result = await connection.execute(createUserQuery, [
+		const result = await connection.query(createUserQuery, [
 			name,
 			username,
 			email,
@@ -21,7 +21,7 @@ export const createUser = async (params: CreateUserParams) => {
 		])
 
 		console.log('User created successfully:', result)
-		await connection.end()
+		connection.release()
 	} catch (error) {
 		console.error('Error creating user:', error)
 		throw new Error('Failed to create user')
@@ -31,16 +31,17 @@ export const createUser = async (params: CreateUserParams) => {
 export const getUserByClerkId = async (clerkId: string) => {
 	try {
 		const connection = await connectToDatabase()
+		console.log('clerk id', clerkId)
 
 		const getUserQuery = `
       SELECT * FROM users
       WHERE clerk_id = ?
     `
-		const [user] = await connection.execute(getUserQuery, [clerkId])
+		const user = await connection.query(getUserQuery, [clerkId])
 
-		console.log('User retrieved successfully:', user)
-		await connection.end()
-		return user
+		console.log('User retrieved successfully:', user.rows[0])
+		connection.release()
+		return user.rows[0]
 	} catch (error) {
 		console.error('Error getting user by clerkId:', error)
 		throw new Error('Failed to get user')
@@ -50,29 +51,33 @@ export const getUserByClerkId = async (clerkId: string) => {
 export const updateUserBodyType = async (bodyType: string, clerkId: string) => {
 	try {
 		const connection = await connectToDatabase()
-		// also needs seeting onboarded valye to true
+		// also needs setting onboarded value to true
 		// there is a change in query, there is a body_shapes table in db, which has id and body_shapes(string) , we have to attach the body_shapes id to the user
 		console.log(bodyType.toLowerCase(), clerkId)
+
 		const bodyTypeQuery = `SELECT id FROM body_shapes WHERE name = ?`
-		const [bodyTypeResult] = await connection.execute(bodyTypeQuery, [
+		const bodyTypeResult = await connection.query(bodyTypeQuery, [
 			bodyType.toLowerCase(),
 		])
+
+		if (bodyTypeResult.rows.length === 0)
+			throw new Error('body type not found')
+
+		const bodyTypeId = bodyTypeResult.rows[0].id
+
 		const updateUserQuery = `
       UPDATE users
       SET body_shape_id = ?, onboarded = true
       WHERE clerk_id = ?
     `
 
-		// @ts-ignore
-		console.log(bodyTypeResult[0].id)
-		const result = await connection.execute(updateUserQuery, [
-			// @ts-ignore
-			bodyTypeResult[0].id as number,
+		const result = await connection.query(updateUserQuery, [
+			bodyTypeId,
 			clerkId,
 		])
 
 		console.log('User updated successfully:', result)
-		await connection.end()
+		connection.release()
 	} catch (error) {}
 }
 
@@ -87,7 +92,7 @@ export const updateUser = async (params: CreateUserParams) => {
       SET name = ?, username = ?, email = ?
       WHERE clerk_id = ?
     `
-		const result = await connection.execute(updateUserQuery, [
+		const result = await connection.query(updateUserQuery, [
 			name,
 			username,
 			email,
@@ -95,7 +100,7 @@ export const updateUser = async (params: CreateUserParams) => {
 		])
 
 		console.log('User updated successfully:', result)
-		await connection.end()
+		connection.release()
 	} catch (error) {
 		console.error('Error updating user:', error)
 		throw new Error('Failed to update user')
@@ -110,10 +115,10 @@ export const deleteUser = async (clerkId: string) => {
       DELETE FROM users
       WHERE clerk_id = ?
     `
-		const result = await connection.execute(deleteUserQuery, [clerkId])
+		const result = await connection.query(deleteUserQuery, [clerkId])
 
 		console.log('User deleted successfully:', result)
-		await connection.end()
+		connection.release()
 	} catch (error) {
 		console.error('Error deleting user:', error)
 		throw new Error('Failed to delete user')
